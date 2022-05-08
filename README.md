@@ -34,7 +34,7 @@
 * convert VinDr-CXR to COCO format
     ```
     cd data/cxr
-    python selectDetImgs.py # 将.dim -> .jpg
+    python selectDetImgs.py # .dim -> .jpg
     python generateCsvTxt.py # original .csv -> target .csv & an TXT file for recording the img name remapping.
     python csv2coco_CXR8.py # check the instructions in this script, you should run multiple times to generate the corresponding JSON file.
     ```
@@ -110,7 +110,7 @@
     --cons_loss_coef 100 \
     --output_dir xxx
     ```
-    其中，  
+    Among them，  
     `--sample_points_num` specifies the number of sampled points；  
     `--cons_loss_coef` specifies the weight of Multi-Point Consistency loss  
 
@@ -136,7 +136,7 @@
     --load_from xxx/checkpoint0110.pth \
     --output_dir xxx
     ```
-    其中，  
+    Among them，  
     `--load_from` specifies the pre-trained models training from step 1-3；  
 
 
@@ -192,7 +192,7 @@
         - specify data proportion __p in line151, to train type a)  
         - specify data proportion __p in line154, to train type b)  
         - specify data proportion __p in line157, to train type c)  
-    * `fcos_CXR8.py`中  
+    * `fcos_CXR8.py`  
         - specify data proportion __p in line49, to train type a)  
         - specify data proportion __p in line52, to train type b)  
         - specify data proportion __p in line55, to train type c)  
