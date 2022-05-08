@@ -1,0 +1,1183 @@
+fatal: Not a git repository (or any parent up to mount point /jizhi/jizhi2/worker/trainer)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+Not using distributed mode
+git:
+  sha: N/A, status: clean, branch: N/A
+
+Namespace(aux_loss=True, backbone='resnet50', batch_size=16, bbox_loss_coef=5, clip_max_norm=0.1, coco_panoptic_path=None, coco_path='/apdcephfs/share_1290796/kimji/data/RSNA/cocoAnn/5p', cons_loss=True, cons_loss_coef=100.0, data_augment=True, dataset_file='rsna', dec_layers=6, device='cuda', dice_loss_coef=1, dilation=False, dim_feedforward=2048, dist_url='env://', distributed=False, dropout=0.1, enc_layers=6, eos_coef=0.1, epochs=111, eval=False, frozen_weights=None, generate_pseudo_bbox=False, giou_loss_coef=2, hidden_dim=256, load_from='', lr=0.0001, lr_backbone=1e-05, lr_drop=[72, 96], mask_loss_coef=1, masks=False, nheads=8, num_queries=100, num_workers=16, output_dir='/apdcephfs/share_1290796/kimji/models/point-detr-RSNA/exp3_stage1_data5p_2pts_consLoss100', partial=0, position_embedding='v4', pre_norm=True, remove_difficult=False, resume='', sample_points_num=2, save_csv=False, save_eval=False, seed=42, set_cost_bbox=5, set_cost_class=1, set_cost_giou=2, start_epoch=0, start_sample_UnSupImg=80, train_with_unlabel_imgs=False, unlabel_cons_loss_coef=1, val_data='val', weight_decay=0.0001, world_size=1)
+weight dict ..  {'loss_ce': 1, 'loss_bbox': 5, 'loss_giou': 2, 'loss_cons': 100.0, 'loss_ce_0': 1, 'loss_bbox_0': 5, 'loss_giou_0': 2, 'loss_cons_0': 100.0, 'loss_ce_1': 1, 'loss_bbox_1': 5, 'loss_giou_1': 2, 'loss_cons_1': 100.0, 'loss_ce_2': 1, 'loss_bbox_2': 5, 'loss_giou_2': 2, 'loss_cons_2': 100.0, 'loss_ce_3': 1, 'loss_bbox_3': 5, 'loss_giou_3': 2, 'loss_cons_3': 100.0, 'loss_ce_4': 1, 'loss_bbox_4': 5, 'loss_giou_4': 2, 'loss_cons_4': 100.0}
+number of params: 41294088
+dataset path: 
+ /apdcephfs/share_1290796/kimji/data/RSNA/cocoAnn/5p/instances_trainBox.json
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+sample points num ..  2
+dataset path: 
+ /apdcephfs/share_1290796/kimji/data/RSNA/cocoAnn/5p/../instances_val.json
+loading annotations into memory...
+Done (t=0.05s)
+creating index...
+index created!
+sample points num ..  2
+training data:
+num:  240
+sample:  5 (tensor([[[-1.9809, -1.9809, -1.9809,  ..., -2.0494, -2.0665, -2.1008],
+         [-1.9638, -1.9638, -1.9638,  ..., -2.0323, -2.0665, -2.1008],
+         [-1.9809, -1.9809, -1.9809,  ..., -2.0323, -2.0494, -2.0837],
+         ...,
+         [ 0.6563,  0.7248,  0.7077,  ..., -1.9467, -1.9295, -2.0494],
+         [ 0.6049,  0.6734,  0.6563,  ..., -1.9295, -1.9467, -2.0494],
+         [-0.7650, -0.7650, -0.7650,  ..., -2.0152, -2.0323, -2.0837]],
+
+        [[-1.8957, -1.8957, -1.8957,  ..., -1.9657, -1.9832, -2.0182],
+         [-1.8782, -1.8782, -1.8782,  ..., -1.9482, -1.9832, -2.0182],
+         [-1.8957, -1.8957, -1.8957,  ..., -1.9482, -1.9657, -2.0007],
+         ...,
+         [ 0.8004,  0.8704,  0.8529,  ..., -1.8606, -1.8431, -1.9657],
+         [ 0.7479,  0.8179,  0.8004,  ..., -1.8431, -1.8606, -1.9657],
+         [-0.6527, -0.6527, -0.6527,  ..., -1.9307, -1.9482, -2.0007]],
+
+        [[-1.6650, -1.6650, -1.6650,  ..., -1.7347, -1.7522, -1.7870],
+         [-1.6476, -1.6476, -1.6476,  ..., -1.7173, -1.7522, -1.7870],
+         [-1.6650, -1.6650, -1.6650,  ..., -1.7173, -1.7347, -1.7696],
+         ...,
+         [ 1.0191,  1.0888,  1.0714,  ..., -1.6302, -1.6127, -1.7347],
+         [ 0.9668,  1.0365,  1.0191,  ..., -1.6127, -1.6302, -1.7347],
+         [-0.4275, -0.4275, -0.4275,  ..., -1.6999, -1.7173, -1.7696]]]), {'labels': tensor([1, 1, 1, 1]), 'object_ids': tensor([0, 0, 1, 1]), 'points': tensor([[0.2736, 0.7318],
+        [0.1936, 0.4577],
+        [0.6048, 0.6701],
+        [0.6380, 0.4911]])}, {'boxes': tensor([[0.2310, 0.5317, 0.3096, 0.5264],
+        [0.2310, 0.5317, 0.3096, 0.5264],
+        [0.6040, 0.5762, 0.2510, 0.4512],
+        [0.6040, 0.5762, 0.2510, 0.4512]])}, '000000.jpg', None)
+Start training
+Epoch: [0]  [ 0/15]  eta: 0:00:35  lr: 0.000100  loss: 5.2465 (5.2465)  loss_bbox: 2.7844 (2.7844)  loss_giou: 1.5227 (1.5227)  loss_cons: 0.9394 (0.9394)  time: 2.3384  data: 1.8136  max mem: 3520
+Epoch: [0]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 4.2953 (4.3652)  loss_bbox: 1.9918 (2.1184)  loss_giou: 1.4829 (1.4835)  loss_cons: 0.7050 (0.7633)  time: 0.6057  data: 0.1831  max mem: 4020
+Epoch: [0]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 4.2953 (4.2612)  loss_bbox: 1.9574 (1.9980)  loss_giou: 1.4690 (1.4613)  loss_cons: 0.7050 (0.8019)  time: 0.5565  data: 0.1366  max mem: 4020
+Epoch: [0] Total time: 0:00:08 (0.5675 s / it)
+Averaged stats: lr: 0.000100  loss: 4.2953 (4.2612)  loss_bbox: 1.9574 (1.9980)  loss_giou: 1.4690 (1.4613)  loss_cons: 0.7050 (0.8019)
+Epoch: [1]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 3.3415 (3.3415)  loss_bbox: 1.3766 (1.3766)  loss_giou: 1.4586 (1.4586)  loss_cons: 0.5063 (0.5063)  time: 2.2055  data: 1.7971  max mem: 4020
+Epoch: [1]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 4.1475 (4.0552)  loss_bbox: 1.7138 (1.7023)  loss_giou: 1.4686 (1.4698)  loss_cons: 0.8693 (0.8831)  time: 0.5953  data: 0.1797  max mem: 4020
+Epoch: [1]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.8633 (3.9906)  loss_bbox: 1.7069 (1.6892)  loss_giou: 1.4794 (1.4699)  loss_cons: 0.8032 (0.8314)  time: 0.5518  data: 0.1368  max mem: 4020
+Epoch: [1] Total time: 0:00:08 (0.5634 s / it)
+Averaged stats: lr: 0.000100  loss: 3.8633 (3.9906)  loss_bbox: 1.7069 (1.6892)  loss_giou: 1.4794 (1.4699)  loss_cons: 0.8032 (0.8314)
+Epoch: [2]  [ 0/15]  eta: 0:00:25  lr: 0.000100  loss: 4.2081 (4.2081)  loss_bbox: 1.6408 (1.6408)  loss_giou: 1.5127 (1.5127)  loss_cons: 1.0547 (1.0547)  time: 1.6792  data: 1.2033  max mem: 4020
+Epoch: [2]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.8406 (4.0012)  loss_bbox: 1.6408 (1.6423)  loss_giou: 1.4363 (1.4603)  loss_cons: 0.8426 (0.8986)  time: 0.5523  data: 0.1375  max mem: 4020
+Epoch: [2]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.8406 (3.9633)  loss_bbox: 1.6408 (1.6690)  loss_giou: 1.4363 (1.4549)  loss_cons: 0.8392 (0.8394)  time: 0.5166  data: 0.1029  max mem: 4020
+Epoch: [2] Total time: 0:00:07 (0.5281 s / it)
+Averaged stats: lr: 0.000100  loss: 3.8406 (3.9633)  loss_bbox: 1.6408 (1.6690)  loss_giou: 1.4363 (1.4549)  loss_cons: 0.8392 (0.8394)
+Epoch: [3]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 3.9788 (3.9788)  loss_bbox: 1.6756 (1.6756)  loss_giou: 1.4771 (1.4771)  loss_cons: 0.8261 (0.8261)  time: 2.2505  data: 1.8306  max mem: 4020
+Epoch: [3]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.8077 (3.7986)  loss_bbox: 1.6915 (1.6822)  loss_giou: 1.4241 (1.4287)  loss_cons: 0.7070 (0.6876)  time: 0.5965  data: 0.1785  max mem: 4020
+Epoch: [3]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7140 (3.7400)  loss_bbox: 1.6756 (1.6604)  loss_giou: 1.4241 (1.4276)  loss_cons: 0.6701 (0.6520)  time: 0.5500  data: 0.1337  max mem: 4020
+Epoch: [3] Total time: 0:00:08 (0.5615 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7140 (3.7400)  loss_bbox: 1.6756 (1.6604)  loss_giou: 1.4241 (1.4276)  loss_cons: 0.6701 (0.6520)
+Epoch: [4]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 4.4986 (4.4986)  loss_bbox: 1.9502 (1.9502)  loss_giou: 1.4510 (1.4510)  loss_cons: 1.0975 (1.0975)  time: 2.2052  data: 1.7824  max mem: 4020
+Epoch: [4]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.8910 (3.8785)  loss_bbox: 1.5910 (1.6858)  loss_giou: 1.4358 (1.4411)  loss_cons: 0.7990 (0.7516)  time: 0.5948  data: 0.1801  max mem: 4020
+Epoch: [4]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6955 (3.8162)  loss_bbox: 1.5808 (1.6530)  loss_giou: 1.4405 (1.4537)  loss_cons: 0.6742 (0.7095)  time: 0.5522  data: 0.1375  max mem: 4020
+Epoch: [4] Total time: 0:00:08 (0.5644 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6955 (3.8162)  loss_bbox: 1.5808 (1.6530)  loss_giou: 1.4405 (1.4537)  loss_cons: 0.6742 (0.7095)
+Test:  [ 0/76]  eta: 0:03:20  loss: 2.9688 (2.9688)  loss_bbox: 1.5666 (1.5666)  loss_giou: 1.4022 (1.4022)  time: 2.6396  data: 2.4462  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.9753 (2.9960)  loss_bbox: 1.5422 (1.5458)  loss_giou: 1.4331 (1.4502)  time: 0.4156  data: 0.2428  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 3.0053 (2.9935)  loss_bbox: 1.5422 (1.5371)  loss_giou: 1.4449 (1.4563)  time: 0.2135  data: 0.0437  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.9705 (2.9775)  loss_bbox: 1.5195 (1.5207)  loss_giou: 1.4489 (1.4568)  time: 0.2058  data: 0.0364  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9705 (3.0060)  loss_bbox: 1.5240 (1.5395)  loss_giou: 1.4767 (1.4664)  time: 0.2043  data: 0.0343  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 3.0810 (3.0052)  loss_bbox: 1.6077 (1.5397)  loss_giou: 1.4967 (1.4656)  time: 0.2235  data: 0.0558  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 3.0544 (3.0092)  loss_bbox: 1.5306 (1.5406)  loss_giou: 1.4759 (1.4685)  time: 0.1966  data: 0.0321  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9291 (2.9890)  loss_bbox: 1.4892 (1.5276)  loss_giou: 1.4555 (1.4614)  time: 0.1889  data: 0.0247  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.9255 (2.9848)  loss_bbox: 1.4710 (1.5243)  loss_giou: 1.4552 (1.4605)  time: 0.1805  data: 0.0215  max mem: 4020
+Test: Total time: 0:00:17 (0.2350 s / it)
+Averaged stats: loss: 2.9255 (2.9848)  loss_bbox: 1.4710 (1.5243)  loss_giou: 1.4552 (1.4605)
+Accumulating evaluation results...
+DONE (t=0.09s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.003
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.021
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.003
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.018
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.030
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.030
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.030
+Epoch: [5]  [ 0/15]  eta: 0:00:34  lr: 0.000100  loss: 3.6985 (3.6985)  loss_bbox: 1.6834 (1.6834)  loss_giou: 1.4723 (1.4723)  loss_cons: 0.5428 (0.5428)  time: 2.3095  data: 1.8964  max mem: 4020
+Epoch: [5]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5175 (3.5598)  loss_bbox: 1.5063 (1.5232)  loss_giou: 1.4336 (1.4314)  loss_cons: 0.5522 (0.6052)  time: 0.5891  data: 0.1795  max mem: 4020
+Epoch: [5]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6985 (3.7500)  loss_bbox: 1.6808 (1.6164)  loss_giou: 1.4386 (1.4455)  loss_cons: 0.6274 (0.6881)  time: 0.5431  data: 0.1337  max mem: 4020
+Epoch: [5] Total time: 0:00:08 (0.5544 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6985 (3.7500)  loss_bbox: 1.6808 (1.6164)  loss_giou: 1.4386 (1.4455)  loss_cons: 0.6274 (0.6881)
+Epoch: [6]  [ 0/15]  eta: 0:00:35  lr: 0.000100  loss: 5.2199 (5.2199)  loss_bbox: 2.0760 (2.0760)  loss_giou: 1.4680 (1.4680)  loss_cons: 1.6759 (1.6759)  time: 2.3440  data: 1.9210  max mem: 4020
+Epoch: [6]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7274 (3.9100)  loss_bbox: 1.6284 (1.6811)  loss_giou: 1.4488 (1.4624)  loss_cons: 0.6688 (0.7665)  time: 0.5942  data: 0.1845  max mem: 4020
+Epoch: [6]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7862 (3.8873)  loss_bbox: 1.5515 (1.6430)  loss_giou: 1.4395 (1.4551)  loss_cons: 0.6908 (0.7891)  time: 0.5487  data: 0.1392  max mem: 4020
+Epoch: [6] Total time: 0:00:08 (0.5600 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7862 (3.8873)  loss_bbox: 1.5515 (1.6430)  loss_giou: 1.4395 (1.4551)  loss_cons: 0.6908 (0.7891)
+Epoch: [7]  [ 0/15]  eta: 0:00:28  lr: 0.000100  loss: 5.4098 (5.4098)  loss_bbox: 2.0837 (2.0837)  loss_giou: 1.5239 (1.5239)  loss_cons: 1.8022 (1.8022)  time: 1.8697  data: 1.4290  max mem: 4020
+Epoch: [7]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 4.0072 (3.9040)  loss_bbox: 1.6604 (1.6439)  loss_giou: 1.4382 (1.4401)  loss_cons: 0.8455 (0.8200)  time: 0.5889  data: 0.1615  max mem: 4020
+Epoch: [7]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 4.0072 (3.8857)  loss_bbox: 1.6604 (1.6419)  loss_giou: 1.4382 (1.4386)  loss_cons: 0.8455 (0.8051)  time: 0.5544  data: 0.1226  max mem: 4020
+Epoch: [7] Total time: 0:00:08 (0.5655 s / it)
+Averaged stats: lr: 0.000100  loss: 4.0072 (3.8857)  loss_bbox: 1.6604 (1.6419)  loss_giou: 1.4382 (1.4386)  loss_cons: 0.8455 (0.8051)
+Epoch: [8]  [ 0/15]  eta: 0:00:34  lr: 0.000100  loss: 4.1149 (4.1149)  loss_bbox: 1.8775 (1.8775)  loss_giou: 1.4811 (1.4811)  loss_cons: 0.7563 (0.7563)  time: 2.3073  data: 1.8940  max mem: 4020
+Epoch: [8]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.6470 (3.8218)  loss_bbox: 1.5073 (1.6217)  loss_giou: 1.4588 (1.4450)  loss_cons: 0.7563 (0.7551)  time: 0.6070  data: 0.1962  max mem: 4020
+Epoch: [8]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.8768 (3.8649)  loss_bbox: 1.5368 (1.6539)  loss_giou: 1.4588 (1.4540)  loss_cons: 0.7563 (0.7571)  time: 0.5579  data: 0.1460  max mem: 4020
+Epoch: [8] Total time: 0:00:08 (0.5703 s / it)
+Averaged stats: lr: 0.000100  loss: 3.8768 (3.8649)  loss_bbox: 1.5368 (1.6539)  loss_giou: 1.4588 (1.4540)  loss_cons: 0.7563 (0.7571)
+Epoch: [9]  [ 0/15]  eta: 0:00:32  lr: 0.000100  loss: 4.2353 (4.2353)  loss_bbox: 1.8863 (1.8863)  loss_giou: 1.4416 (1.4416)  loss_cons: 0.9073 (0.9073)  time: 2.1573  data: 1.7363  max mem: 4020
+Epoch: [9]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.6641 (3.7191)  loss_bbox: 1.5958 (1.6292)  loss_giou: 1.4368 (1.4345)  loss_cons: 0.6910 (0.6554)  time: 0.6025  data: 0.1839  max mem: 4020
+Epoch: [9]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6641 (3.7198)  loss_bbox: 1.5958 (1.6068)  loss_giou: 1.4324 (1.4356)  loss_cons: 0.7162 (0.6774)  time: 0.5563  data: 0.1373  max mem: 4020
+Epoch: [9] Total time: 0:00:08 (0.5675 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6641 (3.7198)  loss_bbox: 1.5958 (1.6068)  loss_giou: 1.4324 (1.4356)  loss_cons: 0.7162 (0.6774)
+Test:  [ 0/76]  eta: 0:03:25  loss: 2.9856 (2.9856)  loss_bbox: 1.5963 (1.5963)  loss_giou: 1.3892 (1.3892)  time: 2.7059  data: 2.5309  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.9856 (3.0264)  loss_bbox: 1.5458 (1.5593)  loss_giou: 1.4369 (1.4671)  time: 0.4232  data: 0.2488  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.9940 (3.0179)  loss_bbox: 1.5471 (1.5458)  loss_giou: 1.4692 (1.4721)  time: 0.2118  data: 0.0373  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.9534 (2.9835)  loss_bbox: 1.4813 (1.5149)  loss_giou: 1.4595 (1.4686)  time: 0.2109  data: 0.0368  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9416 (3.0142)  loss_bbox: 1.4813 (1.5350)  loss_giou: 1.4917 (1.4792)  time: 0.2133  data: 0.0411  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 3.1624 (3.0154)  loss_bbox: 1.6355 (1.5355)  loss_giou: 1.5071 (1.4799)  time: 0.2234  data: 0.0538  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 3.0076 (3.0165)  loss_bbox: 1.5201 (1.5343)  loss_giou: 1.4804 (1.4823)  time: 0.1991  data: 0.0310  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9391 (2.9945)  loss_bbox: 1.4540 (1.5189)  loss_giou: 1.4696 (1.4755)  time: 0.1982  data: 0.0305  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.8967 (2.9893)  loss_bbox: 1.4134 (1.5137)  loss_giou: 1.4696 (1.4756)  time: 0.1879  data: 0.0256  max mem: 4020
+Test: Total time: 0:00:18 (0.2401 s / it)
+Averaged stats: loss: 2.8967 (2.9893)  loss_bbox: 1.4134 (1.5137)  loss_giou: 1.4696 (1.4756)
+Accumulating evaluation results...
+DONE (t=0.09s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.003
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.019
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.003
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.019
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.030
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.030
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.030
+Epoch: [10]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 4.6449 (4.6449)  loss_bbox: 1.7397 (1.7397)  loss_giou: 1.4981 (1.4981)  loss_cons: 1.4070 (1.4070)  time: 2.0717  data: 1.6437  max mem: 4020
+Epoch: [10]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.6246 (3.9585)  loss_bbox: 1.6627 (1.6723)  loss_giou: 1.4918 (1.4697)  loss_cons: 0.7469 (0.8166)  time: 0.6027  data: 0.1777  max mem: 4020
+Epoch: [10]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.5817 (3.8542)  loss_bbox: 1.5398 (1.6280)  loss_giou: 1.4268 (1.4510)  loss_cons: 0.7363 (0.7752)  time: 0.5589  data: 0.1327  max mem: 4020
+Epoch: [10] Total time: 0:00:08 (0.5711 s / it)
+Averaged stats: lr: 0.000100  loss: 3.5817 (3.8542)  loss_bbox: 1.5398 (1.6280)  loss_giou: 1.4268 (1.4510)  loss_cons: 0.7363 (0.7752)
+Epoch: [11]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 3.6417 (3.6417)  loss_bbox: 1.4840 (1.4840)  loss_giou: 1.4204 (1.4204)  loss_cons: 0.7373 (0.7373)  time: 2.2367  data: 1.8303  max mem: 4020
+Epoch: [11]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7218 (3.6471)  loss_bbox: 1.5163 (1.5296)  loss_giou: 1.4242 (1.4214)  loss_cons: 0.7373 (0.6961)  time: 0.5897  data: 0.1831  max mem: 4020
+Epoch: [11]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7291 (3.6820)  loss_bbox: 1.5302 (1.5673)  loss_giou: 1.4243 (1.4280)  loss_cons: 0.6942 (0.6866)  time: 0.5437  data: 0.1364  max mem: 4020
+Epoch: [11] Total time: 0:00:08 (0.5552 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7291 (3.6820)  loss_bbox: 1.5302 (1.5673)  loss_giou: 1.4243 (1.4280)  loss_cons: 0.6942 (0.6866)
+Epoch: [12]  [ 0/15]  eta: 0:00:29  lr: 0.000100  loss: 3.7530 (3.7530)  loss_bbox: 1.7079 (1.7079)  loss_giou: 1.4344 (1.4344)  loss_cons: 0.6106 (0.6106)  time: 1.9733  data: 1.5408  max mem: 4020
+Epoch: [12]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.8657 (3.8448)  loss_bbox: 1.5990 (1.6124)  loss_giou: 1.4571 (1.4401)  loss_cons: 0.7646 (0.7923)  time: 0.5937  data: 0.1718  max mem: 4020
+Epoch: [12]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.8102 (3.8088)  loss_bbox: 1.5990 (1.6117)  loss_giou: 1.4571 (1.4477)  loss_cons: 0.7241 (0.7494)  time: 0.5511  data: 0.1297  max mem: 4020
+Epoch: [12] Total time: 0:00:08 (0.5641 s / it)
+Averaged stats: lr: 0.000100  loss: 3.8102 (3.8088)  loss_bbox: 1.5990 (1.6117)  loss_giou: 1.4571 (1.4477)  loss_cons: 0.7241 (0.7494)
+Epoch: [13]  [ 0/15]  eta: 0:00:35  lr: 0.000100  loss: 2.8116 (2.8116)  loss_bbox: 1.1164 (1.1164)  loss_giou: 1.3627 (1.3627)  loss_cons: 0.3325 (0.3325)  time: 2.3511  data: 1.9186  max mem: 4020
+Epoch: [13]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.7418 (3.8380)  loss_bbox: 1.6390 (1.5963)  loss_giou: 1.4495 (1.4460)  loss_cons: 0.7000 (0.7957)  time: 0.6362  data: 0.2045  max mem: 4020
+Epoch: [13]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7418 (3.8149)  loss_bbox: 1.6442 (1.6189)  loss_giou: 1.4407 (1.4454)  loss_cons: 0.7000 (0.7506)  time: 0.5788  data: 0.1519  max mem: 4020
+Epoch: [13] Total time: 0:00:08 (0.5915 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7418 (3.8149)  loss_bbox: 1.6442 (1.6189)  loss_giou: 1.4407 (1.4454)  loss_cons: 0.7000 (0.7506)
+Epoch: [14]  [ 0/15]  eta: 0:00:29  lr: 0.000100  loss: 4.3645 (4.3645)  loss_bbox: 1.7557 (1.7557)  loss_giou: 1.4330 (1.4330)  loss_cons: 1.1759 (1.1759)  time: 1.9485  data: 1.5368  max mem: 4020
+Epoch: [14]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7006 (3.8703)  loss_bbox: 1.6760 (1.6424)  loss_giou: 1.4330 (1.4378)  loss_cons: 0.7300 (0.7901)  time: 0.5710  data: 0.1612  max mem: 4020
+Epoch: [14]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7006 (3.8193)  loss_bbox: 1.6195 (1.6302)  loss_giou: 1.4300 (1.4262)  loss_cons: 0.7300 (0.7630)  time: 0.5303  data: 0.1204  max mem: 4020
+Epoch: [14] Total time: 0:00:08 (0.5424 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7006 (3.8193)  loss_bbox: 1.6195 (1.6302)  loss_giou: 1.4300 (1.4262)  loss_cons: 0.7300 (0.7630)
+Test:  [ 0/76]  eta: 0:03:22  loss: 2.9066 (2.9066)  loss_bbox: 1.5379 (1.5379)  loss_giou: 1.3687 (1.3687)  time: 2.6677  data: 2.4362  max mem: 4020
+Test:  [10/76]  eta: 0:00:28  loss: 2.9066 (2.9221)  loss_bbox: 1.5379 (1.5008)  loss_giou: 1.4122 (1.4213)  time: 0.4356  data: 0.2539  max mem: 4020
+Test:  [20/76]  eta: 0:00:19  loss: 2.9510 (2.9300)  loss_bbox: 1.4884 (1.4993)  loss_giou: 1.4247 (1.4307)  time: 0.2365  data: 0.0590  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.9377 (2.9207)  loss_bbox: 1.4884 (1.4887)  loss_giou: 1.4274 (1.4320)  time: 0.2299  data: 0.0488  max mem: 4020
+Test:  [40/76]  eta: 0:00:10  loss: 2.9394 (2.9526)  loss_bbox: 1.5008 (1.5110)  loss_giou: 1.4469 (1.4416)  time: 0.2209  data: 0.0408  max mem: 4020
+Test:  [50/76]  eta: 0:00:07  loss: 3.0828 (2.9535)  loss_bbox: 1.5903 (1.5123)  loss_giou: 1.4709 (1.4412)  time: 0.2388  data: 0.0625  max mem: 4020
+Test:  [60/76]  eta: 0:00:04  loss: 3.0044 (2.9611)  loss_bbox: 1.5034 (1.5159)  loss_giou: 1.4589 (1.4452)  time: 0.2085  data: 0.0357  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8742 (2.9423)  loss_bbox: 1.4722 (1.5047)  loss_giou: 1.4275 (1.4376)  time: 0.1929  data: 0.0235  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.8712 (2.9370)  loss_bbox: 1.4522 (1.4992)  loss_giou: 1.4275 (1.4377)  time: 0.1877  data: 0.0246  max mem: 4020
+Test: Total time: 0:00:18 (0.2499 s / it)
+Averaged stats: loss: 2.8712 (2.9370)  loss_bbox: 1.4522 (1.4992)  loss_giou: 1.4275 (1.4377)
+Accumulating evaluation results...
+DONE (t=0.09s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.004
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.025
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.020
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.033
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.033
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.033
+Epoch: [15]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 3.9027 (3.9027)  loss_bbox: 1.5180 (1.5180)  loss_giou: 1.3921 (1.3921)  loss_cons: 0.9926 (0.9926)  time: 2.2633  data: 1.8524  max mem: 4020
+Epoch: [15]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.8936 (3.8587)  loss_bbox: 1.6473 (1.5982)  loss_giou: 1.4393 (1.4392)  loss_cons: 0.8068 (0.8213)  time: 0.5800  data: 0.1747  max mem: 4020
+Epoch: [15]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.8936 (3.8546)  loss_bbox: 1.6473 (1.6016)  loss_giou: 1.4596 (1.4534)  loss_cons: 0.8068 (0.7996)  time: 0.5361  data: 0.1300  max mem: 4020
+Epoch: [15] Total time: 0:00:08 (0.5475 s / it)
+Averaged stats: lr: 0.000100  loss: 3.8936 (3.8546)  loss_bbox: 1.6473 (1.6016)  loss_giou: 1.4596 (1.4534)  loss_cons: 0.8068 (0.7996)
+Epoch: [16]  [ 0/15]  eta: 0:00:36  lr: 0.000100  loss: 3.5569 (3.5569)  loss_bbox: 1.3880 (1.3880)  loss_giou: 1.4536 (1.4536)  loss_cons: 0.7153 (0.7153)  time: 2.4229  data: 2.0025  max mem: 4020
+Epoch: [16]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.6219 (3.6812)  loss_bbox: 1.5970 (1.5719)  loss_giou: 1.4536 (1.4318)  loss_cons: 0.6542 (0.6776)  time: 0.6149  data: 0.1996  max mem: 4020
+Epoch: [16]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7762 (3.8130)  loss_bbox: 1.6207 (1.5950)  loss_giou: 1.4668 (1.4437)  loss_cons: 0.7153 (0.7743)  time: 0.5634  data: 0.1487  max mem: 4020
+Epoch: [16] Total time: 0:00:08 (0.5747 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7762 (3.8130)  loss_bbox: 1.6207 (1.5950)  loss_giou: 1.4668 (1.4437)  loss_cons: 0.7153 (0.7743)
+Epoch: [17]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 3.6797 (3.6797)  loss_bbox: 1.5634 (1.5634)  loss_giou: 1.3625 (1.3625)  loss_cons: 0.7539 (0.7539)  time: 2.0690  data: 1.6465  max mem: 4020
+Epoch: [17]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7695 (3.6735)  loss_bbox: 1.5634 (1.5429)  loss_giou: 1.4383 (1.4266)  loss_cons: 0.7539 (0.7040)  time: 0.5899  data: 0.1692  max mem: 4020
+Epoch: [17]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7695 (3.6878)  loss_bbox: 1.5634 (1.5452)  loss_giou: 1.4225 (1.4258)  loss_cons: 0.7396 (0.7168)  time: 0.5495  data: 0.1293  max mem: 4020
+Epoch: [17] Total time: 0:00:08 (0.5616 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7695 (3.6878)  loss_bbox: 1.5634 (1.5452)  loss_giou: 1.4225 (1.4258)  loss_cons: 0.7396 (0.7168)
+Epoch: [18]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 3.7899 (3.7899)  loss_bbox: 1.5561 (1.5561)  loss_giou: 1.4076 (1.4076)  loss_cons: 0.8261 (0.8261)  time: 2.0442  data: 1.5415  max mem: 4020
+Epoch: [18]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.7899 (3.7193)  loss_bbox: 1.5561 (1.5858)  loss_giou: 1.4178 (1.4044)  loss_cons: 0.7548 (0.7292)  time: 0.6192  data: 0.1726  max mem: 4020
+Epoch: [18]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6618 (3.6840)  loss_bbox: 1.5384 (1.5515)  loss_giou: 1.4113 (1.4070)  loss_cons: 0.7481 (0.7256)  time: 0.5701  data: 0.1297  max mem: 4020
+Epoch: [18] Total time: 0:00:08 (0.5816 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6618 (3.6840)  loss_bbox: 1.5384 (1.5515)  loss_giou: 1.4113 (1.4070)  loss_cons: 0.7481 (0.7256)
+Epoch: [19]  [ 0/15]  eta: 0:00:36  lr: 0.000100  loss: 4.5044 (4.5044)  loss_bbox: 1.7406 (1.7406)  loss_giou: 1.4385 (1.4385)  loss_cons: 1.3252 (1.3252)  time: 2.4380  data: 2.0215  max mem: 4020
+Epoch: [19]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.5920 (3.8371)  loss_bbox: 1.5697 (1.6076)  loss_giou: 1.4094 (1.4259)  loss_cons: 0.6435 (0.8036)  time: 0.6117  data: 0.1959  max mem: 4020
+Epoch: [19]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.5920 (3.7812)  loss_bbox: 1.5380 (1.5768)  loss_giou: 1.4316 (1.4215)  loss_cons: 0.6435 (0.7829)  time: 0.5622  data: 0.1458  max mem: 4020
+Epoch: [19] Total time: 0:00:08 (0.5741 s / it)
+Averaged stats: lr: 0.000100  loss: 3.5920 (3.7812)  loss_bbox: 1.5380 (1.5768)  loss_giou: 1.4316 (1.4215)  loss_cons: 0.6435 (0.7829)
+Test:  [ 0/76]  eta: 0:02:25  loss: 2.9462 (2.9462)  loss_bbox: 1.5668 (1.5668)  loss_giou: 1.3794 (1.3794)  time: 1.9178  data: 1.7169  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.9462 (2.9339)  loss_bbox: 1.5668 (1.5217)  loss_giou: 1.4094 (1.4122)  time: 0.4237  data: 0.2404  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.9388 (2.9483)  loss_bbox: 1.5111 (1.5248)  loss_giou: 1.4210 (1.4235)  time: 0.2468  data: 0.0687  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.9418 (2.9437)  loss_bbox: 1.5150 (1.5182)  loss_giou: 1.4213 (1.4254)  time: 0.2116  data: 0.0371  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9836 (2.9671)  loss_bbox: 1.5369 (1.5319)  loss_giou: 1.4440 (1.4351)  time: 0.2164  data: 0.0452  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 3.0212 (2.9667)  loss_bbox: 1.5463 (1.5328)  loss_giou: 1.4528 (1.4339)  time: 0.2183  data: 0.0502  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 3.0137 (2.9787)  loss_bbox: 1.5463 (1.5404)  loss_giou: 1.4534 (1.4383)  time: 0.1988  data: 0.0319  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9648 (2.9599)  loss_bbox: 1.5290 (1.5296)  loss_giou: 1.4190 (1.4303)  time: 0.1927  data: 0.0269  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.8317 (2.9477)  loss_bbox: 1.4592 (1.5184)  loss_giou: 1.3996 (1.4293)  time: 0.1849  data: 0.0239  max mem: 4020
+Test: Total time: 0:00:18 (0.2392 s / it)
+Averaged stats: loss: 2.8317 (2.9477)  loss_bbox: 1.4592 (1.5184)  loss_giou: 1.3996 (1.4293)
+Accumulating evaluation results...
+DONE (t=0.15s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.004
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.024
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.021
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.034
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.034
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.035
+Epoch: [20]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 3.3868 (3.3868)  loss_bbox: 1.4389 (1.4389)  loss_giou: 1.3855 (1.3855)  loss_cons: 0.5624 (0.5624)  time: 2.0691  data: 1.6653  max mem: 4020
+Epoch: [20]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.6142 (3.5221)  loss_bbox: 1.4389 (1.4755)  loss_giou: 1.3855 (1.3927)  loss_cons: 0.6211 (0.6539)  time: 0.5703  data: 0.1617  max mem: 4020
+Epoch: [20]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6345 (3.7667)  loss_bbox: 1.5646 (1.5562)  loss_giou: 1.3971 (1.4222)  loss_cons: 0.7780 (0.7883)  time: 0.5306  data: 0.1205  max mem: 4020
+Epoch: [20] Total time: 0:00:08 (0.5422 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6345 (3.7667)  loss_bbox: 1.5646 (1.5562)  loss_giou: 1.3971 (1.4222)  loss_cons: 0.7780 (0.7883)
+Epoch: [21]  [ 0/15]  eta: 0:00:39  lr: 0.000100  loss: 3.3352 (3.3352)  loss_bbox: 1.3778 (1.3778)  loss_giou: 1.4723 (1.4723)  loss_cons: 0.4851 (0.4851)  time: 2.6215  data: 2.2004  max mem: 4020
+Epoch: [21]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.4626 (3.5393)  loss_bbox: 1.5111 (1.5254)  loss_giou: 1.4366 (1.4292)  loss_cons: 0.5607 (0.5847)  time: 0.6329  data: 0.2198  max mem: 4020
+Epoch: [21]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6187 (3.6868)  loss_bbox: 1.5722 (1.5831)  loss_giou: 1.4668 (1.4456)  loss_cons: 0.5783 (0.6581)  time: 0.5771  data: 0.1635  max mem: 4020
+Epoch: [21] Total time: 0:00:08 (0.5885 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6187 (3.6868)  loss_bbox: 1.5722 (1.5831)  loss_giou: 1.4668 (1.4456)  loss_cons: 0.5783 (0.6581)
+Epoch: [22]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 3.0831 (3.0831)  loss_bbox: 1.3573 (1.3573)  loss_giou: 1.3666 (1.3666)  loss_cons: 0.3591 (0.3591)  time: 2.1059  data: 1.6974  max mem: 4020
+Epoch: [22]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5749 (3.6645)  loss_bbox: 1.5362 (1.5676)  loss_giou: 1.4032 (1.4132)  loss_cons: 0.6607 (0.6836)  time: 0.5699  data: 0.1627  max mem: 4020
+Epoch: [22]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.9025 (3.8829)  loss_bbox: 1.5904 (1.6265)  loss_giou: 1.4238 (1.4438)  loss_cons: 0.7393 (0.8126)  time: 0.5302  data: 0.1215  max mem: 4020
+Epoch: [22] Total time: 0:00:08 (0.5427 s / it)
+Averaged stats: lr: 0.000100  loss: 3.9025 (3.8829)  loss_bbox: 1.5904 (1.6265)  loss_giou: 1.4238 (1.4438)  loss_cons: 0.7393 (0.8126)
+Epoch: [23]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 4.4418 (4.4418)  loss_bbox: 1.7280 (1.7280)  loss_giou: 1.4679 (1.4679)  loss_cons: 1.2459 (1.2459)  time: 2.2538  data: 1.8366  max mem: 4020
+Epoch: [23]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5314 (3.7086)  loss_bbox: 1.5408 (1.5942)  loss_giou: 1.4171 (1.4111)  loss_cons: 0.6794 (0.7033)  time: 0.5944  data: 0.1820  max mem: 4020
+Epoch: [23]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.5939 (3.6937)  loss_bbox: 1.5447 (1.6147)  loss_giou: 1.4171 (1.4188)  loss_cons: 0.5989 (0.6603)  time: 0.5480  data: 0.1355  max mem: 4020
+Epoch: [23] Total time: 0:00:08 (0.5592 s / it)
+Averaged stats: lr: 0.000100  loss: 3.5939 (3.6937)  loss_bbox: 1.5447 (1.6147)  loss_giou: 1.4171 (1.4188)  loss_cons: 0.5989 (0.6603)
+Epoch: [24]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 3.6351 (3.6351)  loss_bbox: 1.5528 (1.5528)  loss_giou: 1.3744 (1.3744)  loss_cons: 0.7079 (0.7079)  time: 2.0954  data: 1.6755  max mem: 4020
+Epoch: [24]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.8302 (3.8000)  loss_bbox: 1.6027 (1.5941)  loss_giou: 1.4125 (1.4130)  loss_cons: 0.7227 (0.7929)  time: 0.5872  data: 0.1740  max mem: 4020
+Epoch: [24]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6673 (3.7073)  loss_bbox: 1.5645 (1.5569)  loss_giou: 1.4125 (1.4079)  loss_cons: 0.7227 (0.7425)  time: 0.5442  data: 0.1318  max mem: 4020
+Epoch: [24] Total time: 0:00:08 (0.5547 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6673 (3.7073)  loss_bbox: 1.5645 (1.5569)  loss_giou: 1.4125 (1.4079)  loss_cons: 0.7227 (0.7425)
+Test:  [ 0/76]  eta: 0:02:44  loss: 3.0229 (3.0229)  loss_bbox: 1.6183 (1.6183)  loss_giou: 1.4046 (1.4046)  time: 2.1601  data: 1.8776  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.9923 (2.9986)  loss_bbox: 1.5324 (1.5404)  loss_giou: 1.4324 (1.4582)  time: 0.4188  data: 0.2392  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.9923 (2.9951)  loss_bbox: 1.5331 (1.5322)  loss_giou: 1.4592 (1.4629)  time: 0.2352  data: 0.0673  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.9631 (2.9574)  loss_bbox: 1.5331 (1.4977)  loss_giou: 1.4592 (1.4597)  time: 0.2071  data: 0.0356  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9721 (2.9807)  loss_bbox: 1.5520 (1.5112)  loss_giou: 1.4767 (1.4694)  time: 0.2091  data: 0.0359  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 3.0789 (2.9745)  loss_bbox: 1.5520 (1.5047)  loss_giou: 1.4982 (1.4698)  time: 0.2228  data: 0.0557  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.9716 (2.9797)  loss_bbox: 1.4560 (1.5073)  loss_giou: 1.4804 (1.4725)  time: 0.1939  data: 0.0305  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9322 (2.9581)  loss_bbox: 1.4459 (1.4932)  loss_giou: 1.4561 (1.4649)  time: 0.1871  data: 0.0240  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.9105 (2.9510)  loss_bbox: 1.4422 (1.4855)  loss_giou: 1.4543 (1.4655)  time: 0.1828  data: 0.0252  max mem: 4020
+Test: Total time: 0:00:17 (0.2353 s / it)
+Averaged stats: loss: 2.9105 (2.9510)  loss_bbox: 1.4422 (1.4855)  loss_giou: 1.4543 (1.4655)
+Accumulating evaluation results...
+DONE (t=0.09s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.004
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.021
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.020
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.033
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.033
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.033
+Epoch: [25]  [ 0/15]  eta: 0:00:28  lr: 0.000100  loss: 3.2559 (3.2559)  loss_bbox: 1.2451 (1.2451)  loss_giou: 1.3920 (1.3920)  loss_cons: 0.6188 (0.6188)  time: 1.9187  data: 1.5027  max mem: 4020
+Epoch: [25]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.6590 (3.7556)  loss_bbox: 1.5031 (1.5709)  loss_giou: 1.4325 (1.4276)  loss_cons: 0.6713 (0.7570)  time: 0.5621  data: 0.1522  max mem: 4020
+Epoch: [25]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6590 (3.7880)  loss_bbox: 1.5055 (1.5857)  loss_giou: 1.4337 (1.4261)  loss_cons: 0.7831 (0.7762)  time: 0.5233  data: 0.1145  max mem: 4020
+Epoch: [25] Total time: 0:00:08 (0.5343 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6590 (3.7880)  loss_bbox: 1.5055 (1.5857)  loss_giou: 1.4337 (1.4261)  loss_cons: 0.7831 (0.7762)
+Epoch: [26]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 3.1552 (3.1552)  loss_bbox: 1.3915 (1.3915)  loss_giou: 1.4106 (1.4106)  loss_cons: 0.3531 (0.3531)  time: 2.0560  data: 1.5652  max mem: 4020
+Epoch: [26]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5739 (3.6273)  loss_bbox: 1.4846 (1.5383)  loss_giou: 1.4113 (1.4088)  loss_cons: 0.6884 (0.6803)  time: 0.5879  data: 0.1725  max mem: 4020
+Epoch: [26]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6648 (3.7276)  loss_bbox: 1.5213 (1.5943)  loss_giou: 1.4273 (1.4162)  loss_cons: 0.6884 (0.7171)  time: 0.5418  data: 0.1285  max mem: 4020
+Epoch: [26] Total time: 0:00:08 (0.5534 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6648 (3.7276)  loss_bbox: 1.5213 (1.5943)  loss_giou: 1.4273 (1.4162)  loss_cons: 0.6884 (0.7171)
+Epoch: [27]  [ 0/15]  eta: 0:00:35  lr: 0.000100  loss: 5.0311 (5.0311)  loss_bbox: 1.9246 (1.9246)  loss_giou: 1.4522 (1.4522)  loss_cons: 1.6543 (1.6543)  time: 2.3565  data: 1.9313  max mem: 4020
+Epoch: [27]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.7482 (3.8315)  loss_bbox: 1.5888 (1.5816)  loss_giou: 1.4206 (1.4304)  loss_cons: 0.7474 (0.8195)  time: 0.6187  data: 0.2006  max mem: 4020
+Epoch: [27]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7482 (3.7845)  loss_bbox: 1.5888 (1.5767)  loss_giou: 1.4335 (1.4315)  loss_cons: 0.7212 (0.7763)  time: 0.5662  data: 0.1492  max mem: 4020
+Epoch: [27] Total time: 0:00:08 (0.5779 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7482 (3.7845)  loss_bbox: 1.5888 (1.5767)  loss_giou: 1.4335 (1.4315)  loss_cons: 0.7212 (0.7763)
+Epoch: [28]  [ 0/15]  eta: 0:00:35  lr: 0.000100  loss: 3.1802 (3.1802)  loss_bbox: 1.1877 (1.1877)  loss_giou: 1.3093 (1.3093)  loss_cons: 0.6832 (0.6832)  time: 2.3391  data: 1.9195  max mem: 4020
+Epoch: [28]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.8958 (3.8608)  loss_bbox: 1.5874 (1.5883)  loss_giou: 1.4352 (1.4311)  loss_cons: 0.8620 (0.8414)  time: 0.5955  data: 0.1878  max mem: 4020
+Epoch: [28]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.8418 (3.8394)  loss_bbox: 1.5874 (1.5787)  loss_giou: 1.4352 (1.4361)  loss_cons: 0.8617 (0.8245)  time: 0.5482  data: 0.1406  max mem: 4020
+Epoch: [28] Total time: 0:00:08 (0.5596 s / it)
+Averaged stats: lr: 0.000100  loss: 3.8418 (3.8394)  loss_bbox: 1.5874 (1.5787)  loss_giou: 1.4352 (1.4361)  loss_cons: 0.8617 (0.8245)
+Epoch: [29]  [ 0/15]  eta: 0:00:32  lr: 0.000100  loss: 3.3071 (3.3071)  loss_bbox: 1.4211 (1.4211)  loss_giou: 1.3600 (1.3600)  loss_cons: 0.5260 (0.5260)  time: 2.1996  data: 1.7800  max mem: 4020
+Epoch: [29]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.5474 (3.6360)  loss_bbox: 1.4833 (1.5262)  loss_giou: 1.4578 (1.4521)  loss_cons: 0.6448 (0.6577)  time: 0.6020  data: 0.1828  max mem: 4020
+Epoch: [29]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.5474 (3.6725)  loss_bbox: 1.5048 (1.5464)  loss_giou: 1.4485 (1.4461)  loss_cons: 0.6448 (0.6800)  time: 0.5572  data: 0.1372  max mem: 4020
+Epoch: [29] Total time: 0:00:08 (0.5687 s / it)
+Averaged stats: lr: 0.000100  loss: 3.5474 (3.6725)  loss_bbox: 1.5048 (1.5464)  loss_giou: 1.4485 (1.4461)  loss_cons: 0.6448 (0.6800)
+Test:  [ 0/76]  eta: 0:03:22  loss: 2.9253 (2.9253)  loss_bbox: 1.5633 (1.5633)  loss_giou: 1.3620 (1.3620)  time: 2.6710  data: 2.4982  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.9253 (2.9208)  loss_bbox: 1.5633 (1.4978)  loss_giou: 1.4059 (1.4230)  time: 0.4112  data: 0.2420  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.8824 (2.9274)  loss_bbox: 1.4992 (1.4973)  loss_giou: 1.4235 (1.4302)  time: 0.2079  data: 0.0381  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.8824 (2.9027)  loss_bbox: 1.4598 (1.4769)  loss_giou: 1.4235 (1.4259)  time: 0.2072  data: 0.0356  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.8936 (2.9256)  loss_bbox: 1.5112 (1.4905)  loss_giou: 1.4329 (1.4351)  time: 0.2053  data: 0.0336  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.9761 (2.9204)  loss_bbox: 1.5199 (1.4864)  loss_giou: 1.4493 (1.4340)  time: 0.2233  data: 0.0551  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.9761 (2.9307)  loss_bbox: 1.5141 (1.4928)  loss_giou: 1.4539 (1.4379)  time: 0.1974  data: 0.0320  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8583 (2.9125)  loss_bbox: 1.4701 (1.4827)  loss_giou: 1.4263 (1.4298)  time: 0.1903  data: 0.0252  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.8244 (2.9057)  loss_bbox: 1.3939 (1.4755)  loss_giou: 1.4263 (1.4302)  time: 0.1848  data: 0.0253  max mem: 4020
+Test: Total time: 0:00:17 (0.2353 s / it)
+Averaged stats: loss: 2.8244 (2.9057)  loss_bbox: 1.3939 (1.4755)  loss_giou: 1.4263 (1.4302)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.004
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.024
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.021
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.034
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.034
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.035
+Epoch: [30]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 4.5444 (4.5444)  loss_bbox: 1.9451 (1.9451)  loss_giou: 1.5547 (1.5547)  loss_cons: 1.0446 (1.0446)  time: 2.1055  data: 1.6959  max mem: 4020
+Epoch: [30]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.6658 (3.6644)  loss_bbox: 1.5650 (1.5672)  loss_giou: 1.4117 (1.4349)  loss_cons: 0.6069 (0.6623)  time: 0.5768  data: 0.1673  max mem: 4020
+Epoch: [30]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.5902 (3.6252)  loss_bbox: 1.5478 (1.5374)  loss_giou: 1.3987 (1.4227)  loss_cons: 0.6069 (0.6651)  time: 0.5350  data: 0.1251  max mem: 4020
+Epoch: [30] Total time: 0:00:08 (0.5463 s / it)
+Averaged stats: lr: 0.000100  loss: 3.5902 (3.6252)  loss_bbox: 1.5478 (1.5374)  loss_giou: 1.3987 (1.4227)  loss_cons: 0.6069 (0.6651)
+Epoch: [31]  [ 0/15]  eta: 0:00:35  lr: 0.000100  loss: 3.9794 (3.9794)  loss_bbox: 1.5319 (1.5319)  loss_giou: 1.4893 (1.4893)  loss_cons: 0.9582 (0.9582)  time: 2.3372  data: 1.9228  max mem: 4020
+Epoch: [31]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5835 (3.6937)  loss_bbox: 1.5319 (1.5276)  loss_giou: 1.4209 (1.4189)  loss_cons: 0.6272 (0.7472)  time: 0.5966  data: 0.1823  max mem: 4020
+Epoch: [31]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.5835 (3.7002)  loss_bbox: 1.5319 (1.5277)  loss_giou: 1.4209 (1.4225)  loss_cons: 0.6909 (0.7500)  time: 0.5518  data: 0.1358  max mem: 4020
+Epoch: [31] Total time: 0:00:08 (0.5638 s / it)
+Averaged stats: lr: 0.000100  loss: 3.5835 (3.7002)  loss_bbox: 1.5319 (1.5277)  loss_giou: 1.4209 (1.4225)  loss_cons: 0.6909 (0.7500)
+Epoch: [32]  [ 0/15]  eta: 0:00:28  lr: 0.000100  loss: 3.9206 (3.9206)  loss_bbox: 1.6549 (1.6549)  loss_giou: 1.4308 (1.4308)  loss_cons: 0.8348 (0.8348)  time: 1.9175  data: 1.5023  max mem: 4020
+Epoch: [32]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.6598 (3.6435)  loss_bbox: 1.5285 (1.4876)  loss_giou: 1.3993 (1.3994)  loss_cons: 0.7534 (0.7565)  time: 0.5710  data: 0.1600  max mem: 4020
+Epoch: [32]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6598 (3.6782)  loss_bbox: 1.5750 (1.5359)  loss_giou: 1.3993 (1.4040)  loss_cons: 0.7534 (0.7383)  time: 0.5311  data: 0.1197  max mem: 4020
+Epoch: [32] Total time: 0:00:08 (0.5436 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6598 (3.6782)  loss_bbox: 1.5750 (1.5359)  loss_giou: 1.3993 (1.4040)  loss_cons: 0.7534 (0.7383)
+Epoch: [33]  [ 0/15]  eta: 0:00:34  lr: 0.000100  loss: 2.8305 (2.8305)  loss_bbox: 1.1687 (1.1687)  loss_giou: 1.3316 (1.3316)  loss_cons: 0.3302 (0.3302)  time: 2.3036  data: 1.8880  max mem: 4020
+Epoch: [33]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.9337 (3.9199)  loss_bbox: 1.5406 (1.5691)  loss_giou: 1.4259 (1.4304)  loss_cons: 0.9771 (0.9204)  time: 0.5955  data: 0.1861  max mem: 4020
+Epoch: [33]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.8336 (3.8303)  loss_bbox: 1.5040 (1.5369)  loss_giou: 1.4259 (1.4265)  loss_cons: 0.8529 (0.8669)  time: 0.5482  data: 0.1386  max mem: 4020
+Epoch: [33] Total time: 0:00:08 (0.5593 s / it)
+Averaged stats: lr: 0.000100  loss: 3.8336 (3.8303)  loss_bbox: 1.5040 (1.5369)  loss_giou: 1.4259 (1.4265)  loss_cons: 0.8529 (0.8669)
+Epoch: [34]  [ 0/15]  eta: 0:00:27  lr: 0.000100  loss: 4.4331 (4.4331)  loss_bbox: 2.1698 (2.1698)  loss_giou: 1.6016 (1.6016)  loss_cons: 0.6617 (0.6617)  time: 1.8114  data: 1.3879  max mem: 4020
+Epoch: [34]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7064 (3.7547)  loss_bbox: 1.5625 (1.5969)  loss_giou: 1.4359 (1.4341)  loss_cons: 0.6100 (0.7236)  time: 0.5678  data: 0.1486  max mem: 4020
+Epoch: [34]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7064 (3.7128)  loss_bbox: 1.5625 (1.5907)  loss_giou: 1.4322 (1.4322)  loss_cons: 0.6031 (0.6898)  time: 0.5289  data: 0.1121  max mem: 4020
+Epoch: [34] Total time: 0:00:08 (0.5392 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7064 (3.7128)  loss_bbox: 1.5625 (1.5907)  loss_giou: 1.4322 (1.4322)  loss_cons: 0.6031 (0.6898)
+Test:  [ 0/76]  eta: 0:02:20  loss: 2.9687 (2.9687)  loss_bbox: 1.5926 (1.5926)  loss_giou: 1.3761 (1.3761)  time: 1.8480  data: 1.6224  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.9687 (2.9394)  loss_bbox: 1.5727 (1.5270)  loss_giou: 1.4085 (1.4124)  time: 0.4179  data: 0.2399  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.9459 (2.9599)  loss_bbox: 1.5279 (1.5338)  loss_giou: 1.4223 (1.4262)  time: 0.2485  data: 0.0781  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.9331 (2.9474)  loss_bbox: 1.5043 (1.5223)  loss_giou: 1.4259 (1.4251)  time: 0.2060  data: 0.0383  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9331 (2.9664)  loss_bbox: 1.5086 (1.5327)  loss_giou: 1.4381 (1.4337)  time: 0.2095  data: 0.0414  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.9917 (2.9581)  loss_bbox: 1.5497 (1.5257)  loss_giou: 1.4647 (1.4325)  time: 0.2131  data: 0.0449  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.9917 (2.9750)  loss_bbox: 1.5497 (1.5377)  loss_giou: 1.4647 (1.4373)  time: 0.1974  data: 0.0291  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9088 (2.9560)  loss_bbox: 1.4850 (1.5265)  loss_giou: 1.4259 (1.4295)  time: 0.1992  data: 0.0318  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.8500 (2.9432)  loss_bbox: 1.4501 (1.5138)  loss_giou: 1.4222 (1.4294)  time: 0.1819  data: 0.0207  max mem: 4020
+Test: Total time: 0:00:17 (0.2353 s / it)
+Averaged stats: loss: 2.8500 (2.9432)  loss_bbox: 1.4501 (1.5138)  loss_giou: 1.4222 (1.4294)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.004
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.024
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.021
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.035
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.035
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.035
+Epoch: [35]  [ 0/15]  eta: 0:00:29  lr: 0.000100  loss: 3.1221 (3.1221)  loss_bbox: 1.3586 (1.3586)  loss_giou: 1.3598 (1.3598)  loss_cons: 0.4037 (0.4037)  time: 1.9836  data: 1.5720  max mem: 4020
+Epoch: [35]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7515 (3.7820)  loss_bbox: 1.5122 (1.5357)  loss_giou: 1.4259 (1.4286)  loss_cons: 0.8073 (0.8177)  time: 0.5704  data: 0.1608  max mem: 4020
+Epoch: [35]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7515 (3.7755)  loss_bbox: 1.5435 (1.5396)  loss_giou: 1.4259 (1.4210)  loss_cons: 0.8609 (0.8149)  time: 0.5296  data: 0.1205  max mem: 4020
+Epoch: [35] Total time: 0:00:08 (0.5413 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7515 (3.7755)  loss_bbox: 1.5435 (1.5396)  loss_giou: 1.4259 (1.4210)  loss_cons: 0.8609 (0.8149)
+Epoch: [36]  [ 0/15]  eta: 0:00:28  lr: 0.000100  loss: 3.9839 (3.9839)  loss_bbox: 1.5833 (1.5833)  loss_giou: 1.4219 (1.4219)  loss_cons: 0.9787 (0.9787)  time: 1.8902  data: 1.4758  max mem: 4020
+Epoch: [36]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.8026 (3.7307)  loss_bbox: 1.5246 (1.5137)  loss_giou: 1.4115 (1.4116)  loss_cons: 0.8359 (0.8055)  time: 0.5656  data: 0.1554  max mem: 4020
+Epoch: [36]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7720 (3.6701)  loss_bbox: 1.5207 (1.4861)  loss_giou: 1.3931 (1.4095)  loss_cons: 0.6576 (0.7745)  time: 0.5267  data: 0.1163  max mem: 4020
+Epoch: [36] Total time: 0:00:08 (0.5377 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7720 (3.6701)  loss_bbox: 1.5207 (1.4861)  loss_giou: 1.3931 (1.4095)  loss_cons: 0.6576 (0.7745)
+Epoch: [37]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 3.5884 (3.5884)  loss_bbox: 1.5126 (1.5126)  loss_giou: 1.3943 (1.3943)  loss_cons: 0.6815 (0.6815)  time: 2.0538  data: 1.6356  max mem: 4020
+Epoch: [37]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7240 (3.7583)  loss_bbox: 1.5394 (1.5216)  loss_giou: 1.4423 (1.4448)  loss_cons: 0.7950 (0.7920)  time: 0.5801  data: 0.1605  max mem: 4020
+Epoch: [37]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7114 (3.7331)  loss_bbox: 1.5394 (1.5314)  loss_giou: 1.4423 (1.4442)  loss_cons: 0.7837 (0.7576)  time: 0.5391  data: 0.1210  max mem: 4020
+Epoch: [37] Total time: 0:00:08 (0.5487 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7114 (3.7331)  loss_bbox: 1.5394 (1.5314)  loss_giou: 1.4423 (1.4442)  loss_cons: 0.7837 (0.7576)
+Epoch: [38]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 3.4987 (3.4987)  loss_bbox: 1.4935 (1.4935)  loss_giou: 1.4031 (1.4031)  loss_cons: 0.6021 (0.6021)  time: 2.0095  data: 1.5486  max mem: 4020
+Epoch: [38]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.9116 (3.8866)  loss_bbox: 1.5962 (1.6155)  loss_giou: 1.4260 (1.4263)  loss_cons: 0.8152 (0.8449)  time: 0.5809  data: 0.1643  max mem: 4020
+Epoch: [38]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.9116 (3.8797)  loss_bbox: 1.5962 (1.6071)  loss_giou: 1.4211 (1.4219)  loss_cons: 0.8152 (0.8507)  time: 0.5397  data: 0.1249  max mem: 4020
+Epoch: [38] Total time: 0:00:08 (0.5502 s / it)
+Averaged stats: lr: 0.000100  loss: 3.9116 (3.8797)  loss_bbox: 1.5962 (1.6071)  loss_giou: 1.4211 (1.4219)  loss_cons: 0.8152 (0.8507)
+Epoch: [39]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 3.0431 (3.0431)  loss_bbox: 1.2318 (1.2318)  loss_giou: 1.3573 (1.3573)  loss_cons: 0.4540 (0.4540)  time: 2.0333  data: 1.6222  max mem: 4020
+Epoch: [39]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7886 (3.8295)  loss_bbox: 1.6152 (1.5706)  loss_giou: 1.4232 (1.4187)  loss_cons: 0.8229 (0.8402)  time: 0.5684  data: 0.1585  max mem: 4020
+Epoch: [39]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.7530 (3.8268)  loss_bbox: 1.6152 (1.5872)  loss_giou: 1.4232 (1.4199)  loss_cons: 0.7526 (0.8197)  time: 0.5282  data: 0.1182  max mem: 4020
+Epoch: [39] Total time: 0:00:08 (0.5399 s / it)
+Averaged stats: lr: 0.000100  loss: 3.7530 (3.8268)  loss_bbox: 1.6152 (1.5872)  loss_giou: 1.4232 (1.4199)  loss_cons: 0.7526 (0.8197)
+Test:  [ 0/76]  eta: 0:03:03  loss: 3.0470 (3.0470)  loss_bbox: 1.6324 (1.6324)  loss_giou: 1.4146 (1.4146)  time: 2.4176  data: 2.2242  max mem: 4020
+Test:  [10/76]  eta: 0:00:25  loss: 3.0413 (2.9501)  loss_bbox: 1.5578 (1.5143)  loss_giou: 1.4323 (1.4358)  time: 0.3932  data: 0.2200  max mem: 4020
+Test:  [20/76]  eta: 0:00:17  loss: 2.9109 (2.9385)  loss_bbox: 1.4807 (1.4957)  loss_giou: 1.4491 (1.4428)  time: 0.2079  data: 0.0384  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.8994 (2.9094)  loss_bbox: 1.4491 (1.4683)  loss_giou: 1.4485 (1.4411)  time: 0.2050  data: 0.0346  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.8839 (2.9257)  loss_bbox: 1.4432 (1.4761)  loss_giou: 1.4485 (1.4496)  time: 0.2065  data: 0.0351  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.9536 (2.9247)  loss_bbox: 1.4812 (1.4757)  loss_giou: 1.4647 (1.4490)  time: 0.2254  data: 0.0574  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.9338 (2.9333)  loss_bbox: 1.4794 (1.4804)  loss_giou: 1.4660 (1.4529)  time: 0.1989  data: 0.0333  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9175 (2.9149)  loss_bbox: 1.4288 (1.4696)  loss_giou: 1.4495 (1.4453)  time: 0.1910  data: 0.0266  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.8303 (2.9078)  loss_bbox: 1.3870 (1.4612)  loss_giou: 1.4300 (1.4466)  time: 0.1848  data: 0.0265  max mem: 4020
+Test: Total time: 0:00:17 (0.2330 s / it)
+Averaged stats: loss: 2.8303 (2.9078)  loss_bbox: 1.3870 (1.4612)  loss_giou: 1.4300 (1.4466)
+Accumulating evaluation results...
+DONE (t=0.09s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.004
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.022
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.021
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.035
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.035
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.035
+Epoch: [40]  [ 0/15]  eta: 0:00:29  lr: 0.000100  loss: 4.2905 (4.2905)  loss_bbox: 1.6114 (1.6114)  loss_giou: 1.3643 (1.3643)  loss_cons: 1.3149 (1.3149)  time: 1.9826  data: 1.5421  max mem: 4020
+Epoch: [40]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5184 (3.5953)  loss_bbox: 1.4857 (1.4900)  loss_giou: 1.3991 (1.3958)  loss_cons: 0.6712 (0.7095)  time: 0.5801  data: 0.1609  max mem: 4020
+Epoch: [40]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.5184 (3.5814)  loss_bbox: 1.4634 (1.4827)  loss_giou: 1.3991 (1.3973)  loss_cons: 0.6712 (0.7014)  time: 0.5394  data: 0.1210  max mem: 4020
+Epoch: [40] Total time: 0:00:08 (0.5500 s / it)
+Averaged stats: lr: 0.000100  loss: 3.5184 (3.5814)  loss_bbox: 1.4634 (1.4827)  loss_giou: 1.3991 (1.3973)  loss_cons: 0.6712 (0.7014)
+Epoch: [41]  [ 0/15]  eta: 0:00:34  lr: 0.000100  loss: 3.3224 (3.3224)  loss_bbox: 1.4074 (1.4074)  loss_giou: 1.3741 (1.3741)  loss_cons: 0.5410 (0.5410)  time: 2.2750  data: 1.8677  max mem: 4020
+Epoch: [41]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.3224 (3.4200)  loss_bbox: 1.3884 (1.4324)  loss_giou: 1.3665 (1.3775)  loss_cons: 0.5947 (0.6101)  time: 0.5879  data: 0.1814  max mem: 4020
+Epoch: [41]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4470 (3.5086)  loss_bbox: 1.4334 (1.4681)  loss_giou: 1.3741 (1.3914)  loss_cons: 0.5972 (0.6490)  time: 0.5430  data: 0.1353  max mem: 4020
+Epoch: [41] Total time: 0:00:08 (0.5542 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4470 (3.5086)  loss_bbox: 1.4334 (1.4681)  loss_giou: 1.3741 (1.3914)  loss_cons: 0.5972 (0.6490)
+Epoch: [42]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 3.2761 (3.2761)  loss_bbox: 1.2485 (1.2485)  loss_giou: 1.3417 (1.3417)  loss_cons: 0.6859 (0.6859)  time: 2.2107  data: 1.7955  max mem: 4020
+Epoch: [42]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5782 (3.6309)  loss_bbox: 1.4284 (1.4308)  loss_giou: 1.3970 (1.3972)  loss_cons: 0.7213 (0.8028)  time: 0.5917  data: 0.1838  max mem: 4020
+Epoch: [42]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6109 (3.6193)  loss_bbox: 1.4694 (1.4561)  loss_giou: 1.4009 (1.3942)  loss_cons: 0.7213 (0.7691)  time: 0.5449  data: 0.1370  max mem: 4020
+Epoch: [42] Total time: 0:00:08 (0.5569 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6109 (3.6193)  loss_bbox: 1.4694 (1.4561)  loss_giou: 1.4009 (1.3942)  loss_cons: 0.7213 (0.7691)
+Epoch: [43]  [ 0/15]  eta: 0:00:28  lr: 0.000100  loss: 4.0561 (4.0561)  loss_bbox: 1.6899 (1.6899)  loss_giou: 1.4801 (1.4801)  loss_cons: 0.8861 (0.8861)  time: 1.9067  data: 1.4817  max mem: 4020
+Epoch: [43]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5632 (3.6026)  loss_bbox: 1.5428 (1.4794)  loss_giou: 1.4280 (1.4252)  loss_cons: 0.7503 (0.6979)  time: 0.5709  data: 0.1617  max mem: 4020
+Epoch: [43]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6507 (3.6557)  loss_bbox: 1.5730 (1.5209)  loss_giou: 1.4423 (1.4258)  loss_cons: 0.7503 (0.7089)  time: 0.5298  data: 0.1206  max mem: 4020
+Epoch: [43] Total time: 0:00:08 (0.5416 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6507 (3.6557)  loss_bbox: 1.5730 (1.5209)  loss_giou: 1.4423 (1.4258)  loss_cons: 0.7503 (0.7089)
+Epoch: [44]  [ 0/15]  eta: 0:00:29  lr: 0.000100  loss: 3.8903 (3.8903)  loss_bbox: 1.7913 (1.7913)  loss_giou: 1.3466 (1.3466)  loss_cons: 0.7524 (0.7524)  time: 1.9750  data: 1.5550  max mem: 4020
+Epoch: [44]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.6090 (3.6323)  loss_bbox: 1.4964 (1.5048)  loss_giou: 1.3955 (1.3890)  loss_cons: 0.6259 (0.7385)  time: 0.5824  data: 0.1636  max mem: 4020
+Epoch: [44]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6090 (3.6615)  loss_bbox: 1.4964 (1.5030)  loss_giou: 1.3960 (1.3955)  loss_cons: 0.6950 (0.7630)  time: 0.5390  data: 0.1224  max mem: 4020
+Epoch: [44] Total time: 0:00:08 (0.5496 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6090 (3.6615)  loss_bbox: 1.4964 (1.5030)  loss_giou: 1.3960 (1.3955)  loss_cons: 0.6950 (0.7630)
+Test:  [ 0/76]  eta: 0:03:01  loss: 3.1037 (3.1037)  loss_bbox: 1.6918 (1.6918)  loss_giou: 1.4119 (1.4119)  time: 2.3880  data: 2.1879  max mem: 4020
+Test:  [10/76]  eta: 0:00:26  loss: 3.0438 (2.9760)  loss_bbox: 1.5481 (1.5486)  loss_giou: 1.4239 (1.4274)  time: 0.4013  data: 0.2203  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.8790 (2.9664)  loss_bbox: 1.4859 (1.5333)  loss_giou: 1.4248 (1.4331)  time: 0.2205  data: 0.0417  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.8790 (2.9485)  loss_bbox: 1.4497 (1.5174)  loss_giou: 1.4290 (1.4312)  time: 0.2223  data: 0.0454  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.8950 (2.9526)  loss_bbox: 1.4849 (1.5170)  loss_giou: 1.4290 (1.4356)  time: 0.2285  data: 0.0548  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.8934 (2.9451)  loss_bbox: 1.4967 (1.5106)  loss_giou: 1.4415 (1.4345)  time: 0.2274  data: 0.0564  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.9629 (2.9601)  loss_bbox: 1.5170 (1.5218)  loss_giou: 1.4470 (1.4383)  time: 0.1905  data: 0.0207  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9730 (2.9473)  loss_bbox: 1.5170 (1.5157)  loss_giou: 1.4427 (1.4316)  time: 0.1893  data: 0.0211  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.8536 (2.9328)  loss_bbox: 1.4230 (1.5010)  loss_giou: 1.4204 (1.4318)  time: 0.1826  data: 0.0212  max mem: 4020
+Test: Total time: 0:00:18 (0.2380 s / it)
+Averaged stats: loss: 2.8536 (2.9328)  loss_bbox: 1.4230 (1.5010)  loss_giou: 1.4204 (1.4318)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.004
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.024
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.021
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.035
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.035
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.035
+Epoch: [45]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 3.5343 (3.5343)  loss_bbox: 1.4641 (1.4641)  loss_giou: 1.4212 (1.4212)  loss_cons: 0.6490 (0.6490)  time: 2.1084  data: 1.6878  max mem: 4020
+Epoch: [45]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5343 (3.4628)  loss_bbox: 1.5094 (1.4815)  loss_giou: 1.3782 (1.3752)  loss_cons: 0.5528 (0.6060)  time: 0.5730  data: 0.1600  max mem: 4020
+Epoch: [45]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.5458 (3.5047)  loss_bbox: 1.4641 (1.4523)  loss_giou: 1.3766 (1.3772)  loss_cons: 0.6341 (0.6752)  time: 0.5315  data: 0.1191  max mem: 4020
+Epoch: [45] Total time: 0:00:08 (0.5429 s / it)
+Averaged stats: lr: 0.000100  loss: 3.5458 (3.5047)  loss_bbox: 1.4641 (1.4523)  loss_giou: 1.3766 (1.3772)  loss_cons: 0.6341 (0.6752)
+Epoch: [46]  [ 0/15]  eta: 0:00:34  lr: 0.000100  loss: 3.1708 (3.1708)  loss_bbox: 1.2511 (1.2511)  loss_giou: 1.3757 (1.3757)  loss_cons: 0.5440 (0.5440)  time: 2.2693  data: 1.8585  max mem: 4020
+Epoch: [46]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.4514 (3.5780)  loss_bbox: 1.4751 (1.5112)  loss_giou: 1.3897 (1.3920)  loss_cons: 0.5440 (0.6749)  time: 0.5872  data: 0.1809  max mem: 4020
+Epoch: [46]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6102 (3.6443)  loss_bbox: 1.4788 (1.5193)  loss_giou: 1.4037 (1.4060)  loss_cons: 0.6768 (0.7190)  time: 0.5418  data: 0.1351  max mem: 4020
+Epoch: [46] Total time: 0:00:08 (0.5530 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6102 (3.6443)  loss_bbox: 1.4788 (1.5193)  loss_giou: 1.4037 (1.4060)  loss_cons: 0.6768 (0.7190)
+Epoch: [47]  [ 0/15]  eta: 0:00:32  lr: 0.000100  loss: 3.6203 (3.6203)  loss_bbox: 1.4804 (1.4804)  loss_giou: 1.3404 (1.3404)  loss_cons: 0.7995 (0.7995)  time: 2.1888  data: 1.7846  max mem: 4020
+Epoch: [47]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7505 (3.6246)  loss_bbox: 1.4804 (1.5059)  loss_giou: 1.4060 (1.3930)  loss_cons: 0.7232 (0.7257)  time: 0.5856  data: 0.1785  max mem: 4020
+Epoch: [47]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6203 (3.5856)  loss_bbox: 1.4804 (1.4829)  loss_giou: 1.3998 (1.3869)  loss_cons: 0.7232 (0.7158)  time: 0.5405  data: 0.1330  max mem: 4020
+Epoch: [47] Total time: 0:00:08 (0.5518 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6203 (3.5856)  loss_bbox: 1.4804 (1.4829)  loss_giou: 1.3998 (1.3869)  loss_cons: 0.7232 (0.7158)
+Epoch: [48]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 3.9718 (3.9718)  loss_bbox: 1.6242 (1.6242)  loss_giou: 1.4276 (1.4276)  loss_cons: 0.9200 (0.9200)  time: 2.1032  data: 1.6870  max mem: 4020
+Epoch: [48]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.7656 (3.6477)  loss_bbox: 1.5996 (1.5218)  loss_giou: 1.3765 (1.3886)  loss_cons: 0.7049 (0.7373)  time: 0.5848  data: 0.1737  max mem: 4020
+Epoch: [48]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.5624 (3.5879)  loss_bbox: 1.5266 (1.4989)  loss_giou: 1.3765 (1.3887)  loss_cons: 0.6769 (0.7003)  time: 0.5413  data: 0.1296  max mem: 4020
+Epoch: [48] Total time: 0:00:08 (0.5521 s / it)
+Averaged stats: lr: 0.000100  loss: 3.5624 (3.5879)  loss_bbox: 1.5266 (1.4989)  loss_giou: 1.3765 (1.3887)  loss_cons: 0.6769 (0.7003)
+Epoch: [49]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 3.3626 (3.3626)  loss_bbox: 1.4396 (1.4396)  loss_giou: 1.3393 (1.3393)  loss_cons: 0.5836 (0.5836)  time: 2.0740  data: 1.6498  max mem: 4020
+Epoch: [49]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.4643 (3.5484)  loss_bbox: 1.4396 (1.4638)  loss_giou: 1.4018 (1.4199)  loss_cons: 0.6520 (0.6646)  time: 0.5816  data: 0.1754  max mem: 4020
+Epoch: [49]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4882 (3.6139)  loss_bbox: 1.4897 (1.4773)  loss_giou: 1.4018 (1.4175)  loss_cons: 0.7277 (0.7191)  time: 0.5374  data: 0.1307  max mem: 4020
+Epoch: [49] Total time: 0:00:08 (0.5493 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4882 (3.6139)  loss_bbox: 1.4897 (1.4773)  loss_giou: 1.4018 (1.4175)  loss_cons: 0.7277 (0.7191)
+Test:  [ 0/76]  eta: 0:03:06  loss: 3.0112 (3.0112)  loss_bbox: 1.6119 (1.6119)  loss_giou: 1.3993 (1.3993)  time: 2.4559  data: 2.2778  max mem: 4020
+Test:  [10/76]  eta: 0:00:26  loss: 2.8927 (2.8950)  loss_bbox: 1.5061 (1.5082)  loss_giou: 1.3799 (1.3868)  time: 0.3955  data: 0.2187  max mem: 4020
+Test:  [20/76]  eta: 0:00:17  loss: 2.8927 (2.9401)  loss_bbox: 1.5072 (1.5377)  loss_giou: 1.3905 (1.4024)  time: 0.2108  data: 0.0369  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.9207 (2.9301)  loss_bbox: 1.5599 (1.5309)  loss_giou: 1.4048 (1.3992)  time: 0.2102  data: 0.0366  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9207 (2.9527)  loss_bbox: 1.5470 (1.5447)  loss_giou: 1.4048 (1.4080)  time: 0.2099  data: 0.0362  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.9350 (2.9412)  loss_bbox: 1.5195 (1.5346)  loss_giou: 1.4309 (1.4066)  time: 0.2319  data: 0.0619  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.9483 (2.9521)  loss_bbox: 1.5181 (1.5417)  loss_giou: 1.3870 (1.4104)  time: 0.2052  data: 0.0377  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9530 (2.9384)  loss_bbox: 1.5181 (1.5345)  loss_giou: 1.3870 (1.4038)  time: 0.1897  data: 0.0235  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.8184 (2.9291)  loss_bbox: 1.4593 (1.5244)  loss_giou: 1.3943 (1.4047)  time: 0.1853  data: 0.0250  max mem: 4020
+Test: Total time: 0:00:17 (0.2360 s / it)
+Averaged stats: loss: 2.8184 (2.9291)  loss_bbox: 1.4593 (1.5244)  loss_giou: 1.3943 (1.4047)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.005
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.027
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.024
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.040
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.040
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.040
+Epoch: [50]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 2.7489 (2.7489)  loss_bbox: 1.1257 (1.1257)  loss_giou: 1.2455 (1.2455)  loss_cons: 0.3777 (0.3777)  time: 2.2068  data: 1.7884  max mem: 4020
+Epoch: [50]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.4310 (3.3633)  loss_bbox: 1.3718 (1.3924)  loss_giou: 1.3766 (1.3830)  loss_cons: 0.6036 (0.5879)  time: 0.5939  data: 0.1794  max mem: 4020
+Epoch: [50]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4752 (3.4559)  loss_bbox: 1.3859 (1.4440)  loss_giou: 1.3687 (1.3700)  loss_cons: 0.6328 (0.6419)  time: 0.5496  data: 0.1357  max mem: 4020
+Epoch: [50] Total time: 0:00:08 (0.5594 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4752 (3.4559)  loss_bbox: 1.3859 (1.4440)  loss_giou: 1.3687 (1.3700)  loss_cons: 0.6328 (0.6419)
+Epoch: [51]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 3.4078 (3.4078)  loss_bbox: 1.3339 (1.3339)  loss_giou: 1.3418 (1.3418)  loss_cons: 0.7321 (0.7321)  time: 2.2418  data: 1.8331  max mem: 4020
+Epoch: [51]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.4152 (3.5012)  loss_bbox: 1.4392 (1.4871)  loss_giou: 1.3719 (1.3887)  loss_cons: 0.5315 (0.6253)  time: 0.5882  data: 0.1807  max mem: 4020
+Epoch: [51]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4152 (3.5347)  loss_bbox: 1.4392 (1.5015)  loss_giou: 1.4117 (1.3944)  loss_cons: 0.5315 (0.6389)  time: 0.5434  data: 0.1355  max mem: 4020
+Epoch: [51] Total time: 0:00:08 (0.5538 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4152 (3.5347)  loss_bbox: 1.4392 (1.5015)  loss_giou: 1.4117 (1.3944)  loss_cons: 0.5315 (0.6389)
+Epoch: [52]  [ 0/15]  eta: 0:00:34  lr: 0.000100  loss: 3.6030 (3.6030)  loss_bbox: 1.4610 (1.4610)  loss_giou: 1.3641 (1.3641)  loss_cons: 0.7779 (0.7779)  time: 2.3221  data: 1.9002  max mem: 4020
+Epoch: [52]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.5021 (3.5520)  loss_bbox: 1.4610 (1.4483)  loss_giou: 1.4014 (1.4158)  loss_cons: 0.6672 (0.6879)  time: 0.6061  data: 0.1865  max mem: 4020
+Epoch: [52]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.6030 (3.5752)  loss_bbox: 1.4729 (1.4632)  loss_giou: 1.3944 (1.4120)  loss_cons: 0.6672 (0.7000)  time: 0.5581  data: 0.1400  max mem: 4020
+Epoch: [52] Total time: 0:00:08 (0.5697 s / it)
+Averaged stats: lr: 0.000100  loss: 3.6030 (3.5752)  loss_bbox: 1.4729 (1.4632)  loss_giou: 1.3944 (1.4120)  loss_cons: 0.6672 (0.7000)
+Epoch: [53]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 3.9803 (3.9803)  loss_bbox: 1.6655 (1.6655)  loss_giou: 1.4112 (1.4112)  loss_cons: 0.9035 (0.9035)  time: 2.2034  data: 1.7961  max mem: 4020
+Epoch: [53]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5334 (3.6449)  loss_bbox: 1.3829 (1.5031)  loss_giou: 1.3933 (1.3938)  loss_cons: 0.7480 (0.7480)  time: 0.5812  data: 0.1764  max mem: 4020
+Epoch: [53]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4931 (3.5899)  loss_bbox: 1.3829 (1.4695)  loss_giou: 1.3797 (1.3853)  loss_cons: 0.7480 (0.7351)  time: 0.5353  data: 0.1313  max mem: 4020
+Epoch: [53] Total time: 0:00:08 (0.5461 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4931 (3.5899)  loss_bbox: 1.3829 (1.4695)  loss_giou: 1.3797 (1.3853)  loss_cons: 0.7480 (0.7351)
+Epoch: [54]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 3.3020 (3.3020)  loss_bbox: 1.4668 (1.4668)  loss_giou: 1.3663 (1.3663)  loss_cons: 0.4689 (0.4689)  time: 2.0325  data: 1.6214  max mem: 4020
+Epoch: [54]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.3020 (3.4214)  loss_bbox: 1.4252 (1.4144)  loss_giou: 1.3601 (1.3383)  loss_cons: 0.5951 (0.6688)  time: 0.5669  data: 0.1575  max mem: 4020
+Epoch: [54]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.3226 (3.5128)  loss_bbox: 1.4260 (1.4623)  loss_giou: 1.3623 (1.3563)  loss_cons: 0.6072 (0.6941)  time: 0.5281  data: 0.1194  max mem: 4020
+Epoch: [54] Total time: 0:00:08 (0.5399 s / it)
+Averaged stats: lr: 0.000100  loss: 3.3226 (3.5128)  loss_bbox: 1.4260 (1.4623)  loss_giou: 1.3623 (1.3563)  loss_cons: 0.6072 (0.6941)
+Test:  [ 0/76]  eta: 0:03:38  loss: 3.1822 (3.1822)  loss_bbox: 1.7398 (1.7398)  loss_giou: 1.4424 (1.4424)  time: 2.8806  data: 2.7082  max mem: 4020
+Test:  [10/76]  eta: 0:00:28  loss: 2.9850 (3.0223)  loss_bbox: 1.6012 (1.6066)  loss_giou: 1.4114 (1.4156)  time: 0.4365  data: 0.2613  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.9549 (3.0241)  loss_bbox: 1.6012 (1.6020)  loss_giou: 1.4114 (1.4221)  time: 0.2103  data: 0.0380  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.9549 (3.0017)  loss_bbox: 1.6051 (1.5827)  loss_giou: 1.4185 (1.4190)  time: 0.2074  data: 0.0347  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9142 (3.0012)  loss_bbox: 1.5024 (1.5793)  loss_giou: 1.4185 (1.4219)  time: 0.2085  data: 0.0342  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.9646 (2.9952)  loss_bbox: 1.5404 (1.5754)  loss_giou: 1.4209 (1.4199)  time: 0.2288  data: 0.0577  max mem: 4020
+Test:  [60/76]  eta: 0:00:04  loss: 3.0067 (3.0121)  loss_bbox: 1.5533 (1.5863)  loss_giou: 1.4235 (1.4258)  time: 0.2002  data: 0.0320  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 3.0513 (3.0057)  loss_bbox: 1.6142 (1.5844)  loss_giou: 1.4235 (1.4213)  time: 0.1915  data: 0.0241  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.9207 (2.9880)  loss_bbox: 1.5284 (1.5687)  loss_giou: 1.4058 (1.4193)  time: 0.1865  data: 0.0240  max mem: 4020
+Test: Total time: 0:00:18 (0.2407 s / it)
+Averaged stats: loss: 2.9207 (2.9880)  loss_bbox: 1.5284 (1.5687)  loss_giou: 1.4058 (1.4193)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.005
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.025
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.022
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.037
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.037
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.037
+Epoch: [55]  [ 0/15]  eta: 0:00:35  lr: 0.000100  loss: 3.9687 (3.9687)  loss_bbox: 1.6170 (1.6170)  loss_giou: 1.4017 (1.4017)  loss_cons: 0.9501 (0.9501)  time: 2.3420  data: 1.9272  max mem: 4020
+Epoch: [55]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.4915 (3.6204)  loss_bbox: 1.5080 (1.4968)  loss_giou: 1.4473 (1.4433)  loss_cons: 0.5520 (0.6803)  time: 0.6036  data: 0.1883  max mem: 4020
+Epoch: [55]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4498 (3.5752)  loss_bbox: 1.4804 (1.4902)  loss_giou: 1.4186 (1.4232)  loss_cons: 0.5520 (0.6618)  time: 0.5571  data: 0.1422  max mem: 4020
+Epoch: [55] Total time: 0:00:08 (0.5674 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4498 (3.5752)  loss_bbox: 1.4804 (1.4902)  loss_giou: 1.4186 (1.4232)  loss_cons: 0.5520 (0.6618)
+Epoch: [56]  [ 0/15]  eta: 0:00:34  lr: 0.000100  loss: 3.7000 (3.7000)  loss_bbox: 1.6423 (1.6423)  loss_giou: 1.4127 (1.4127)  loss_cons: 0.6450 (0.6450)  time: 2.3115  data: 1.8948  max mem: 4020
+Epoch: [56]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.4648 (3.5603)  loss_bbox: 1.4351 (1.4958)  loss_giou: 1.3930 (1.3964)  loss_cons: 0.6450 (0.6682)  time: 0.5991  data: 0.1808  max mem: 4020
+Epoch: [56]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4648 (3.5407)  loss_bbox: 1.4351 (1.4780)  loss_giou: 1.3734 (1.3846)  loss_cons: 0.6850 (0.6781)  time: 0.5526  data: 0.1349  max mem: 4020
+Epoch: [56] Total time: 0:00:08 (0.5630 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4648 (3.5407)  loss_bbox: 1.4351 (1.4780)  loss_giou: 1.3734 (1.3846)  loss_cons: 0.6850 (0.6781)
+Epoch: [57]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 3.8376 (3.8376)  loss_bbox: 1.7498 (1.7498)  loss_giou: 1.3479 (1.3479)  loss_cons: 0.7399 (0.7399)  time: 2.0517  data: 1.6353  max mem: 4020
+Epoch: [57]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.4700 (3.4936)  loss_bbox: 1.5051 (1.4928)  loss_giou: 1.3604 (1.3566)  loss_cons: 0.6688 (0.6442)  time: 0.5753  data: 0.1585  max mem: 4020
+Epoch: [57]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4700 (3.5128)  loss_bbox: 1.4873 (1.4620)  loss_giou: 1.3646 (1.3698)  loss_cons: 0.6688 (0.6810)  time: 0.5377  data: 0.1186  max mem: 4020
+Epoch: [57] Total time: 0:00:08 (0.5492 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4700 (3.5128)  loss_bbox: 1.4873 (1.4620)  loss_giou: 1.3646 (1.3698)  loss_cons: 0.6688 (0.6810)
+Epoch: [58]  [ 0/15]  eta: 0:00:28  lr: 0.000100  loss: 3.1056 (3.1056)  loss_bbox: 1.2141 (1.2141)  loss_giou: 1.3755 (1.3755)  loss_cons: 0.5160 (0.5160)  time: 1.8712  data: 1.4402  max mem: 4020
+Epoch: [58]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.5551 (3.5900)  loss_bbox: 1.4786 (1.4963)  loss_giou: 1.3892 (1.3876)  loss_cons: 0.6332 (0.7060)  time: 0.5656  data: 0.1576  max mem: 4020
+Epoch: [58]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4278 (3.5141)  loss_bbox: 1.4786 (1.4676)  loss_giou: 1.3892 (1.3859)  loss_cons: 0.5671 (0.6606)  time: 0.5263  data: 0.1176  max mem: 4020
+Epoch: [58] Total time: 0:00:08 (0.5379 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4278 (3.5141)  loss_bbox: 1.4786 (1.4676)  loss_giou: 1.3892 (1.3859)  loss_cons: 0.5671 (0.6606)
+Epoch: [59]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 3.6846 (3.6846)  loss_bbox: 1.3662 (1.3662)  loss_giou: 1.4452 (1.4452)  loss_cons: 0.8732 (0.8732)  time: 2.0132  data: 1.6046  max mem: 4020
+Epoch: [59]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.4468 (3.5241)  loss_bbox: 1.3913 (1.4260)  loss_giou: 1.4172 (1.4001)  loss_cons: 0.6173 (0.6980)  time: 0.5675  data: 0.1608  max mem: 4020
+Epoch: [59]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4468 (3.5230)  loss_bbox: 1.4119 (1.4581)  loss_giou: 1.4151 (1.3999)  loss_cons: 0.5982 (0.6651)  time: 0.5269  data: 0.1199  max mem: 4020
+Epoch: [59] Total time: 0:00:08 (0.5381 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4468 (3.5230)  loss_bbox: 1.4119 (1.4581)  loss_giou: 1.4151 (1.3999)  loss_cons: 0.5982 (0.6651)
+Test:  [ 0/76]  eta: 0:02:56  loss: 3.1525 (3.1525)  loss_bbox: 1.7400 (1.7400)  loss_giou: 1.4125 (1.4125)  time: 2.3241  data: 2.1450  max mem: 4020
+Test:  [10/76]  eta: 0:00:25  loss: 3.0532 (3.0101)  loss_bbox: 1.5862 (1.5881)  loss_giou: 1.4318 (1.4220)  time: 0.3901  data: 0.2197  max mem: 4020
+Test:  [20/76]  eta: 0:00:17  loss: 2.9457 (3.0127)  loss_bbox: 1.5611 (1.5829)  loss_giou: 1.4318 (1.4297)  time: 0.2101  data: 0.0412  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.9371 (2.9908)  loss_bbox: 1.5012 (1.5638)  loss_giou: 1.4149 (1.4271)  time: 0.2069  data: 0.0354  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9554 (2.9982)  loss_bbox: 1.5012 (1.5646)  loss_giou: 1.4216 (1.4336)  time: 0.2093  data: 0.0379  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.9586 (2.9929)  loss_bbox: 1.5316 (1.5614)  loss_giou: 1.4450 (1.4315)  time: 0.2245  data: 0.0573  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.9586 (2.9986)  loss_bbox: 1.5261 (1.5630)  loss_giou: 1.4543 (1.4356)  time: 0.1994  data: 0.0336  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9400 (2.9900)  loss_bbox: 1.5386 (1.5599)  loss_giou: 1.4434 (1.4301)  time: 0.1905  data: 0.0235  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.9132 (2.9758)  loss_bbox: 1.5221 (1.5453)  loss_giou: 1.4171 (1.4305)  time: 0.1862  data: 0.0248  max mem: 4020
+Test: Total time: 0:00:17 (0.2327 s / it)
+Averaged stats: loss: 2.9132 (2.9758)  loss_bbox: 1.5221 (1.5453)  loss_giou: 1.4171 (1.4305)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.005
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.024
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.022
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.037
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.037
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.037
+Epoch: [60]  [ 0/15]  eta: 0:00:33  lr: 0.000100  loss: 4.1225 (4.1225)  loss_bbox: 1.4654 (1.4654)  loss_giou: 1.4366 (1.4366)  loss_cons: 1.2204 (1.2204)  time: 2.2601  data: 1.8302  max mem: 4020
+Epoch: [60]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.3567 (3.3727)  loss_bbox: 1.4654 (1.4033)  loss_giou: 1.3755 (1.3760)  loss_cons: 0.4921 (0.5934)  time: 0.6008  data: 0.1855  max mem: 4020
+Epoch: [60]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4122 (3.4689)  loss_bbox: 1.4654 (1.4413)  loss_giou: 1.3820 (1.3938)  loss_cons: 0.5177 (0.6338)  time: 0.5532  data: 0.1381  max mem: 4020
+Epoch: [60] Total time: 0:00:08 (0.5644 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4122 (3.4689)  loss_bbox: 1.4654 (1.4413)  loss_giou: 1.3820 (1.3938)  loss_cons: 0.5177 (0.6338)
+Epoch: [61]  [ 0/15]  eta: 0:00:32  lr: 0.000100  loss: 3.1123 (3.1123)  loss_bbox: 1.3378 (1.3378)  loss_giou: 1.4896 (1.4896)  loss_cons: 0.2849 (0.2849)  time: 2.1656  data: 1.7278  max mem: 4020
+Epoch: [61]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.1622 (3.3840)  loss_bbox: 1.2980 (1.4451)  loss_giou: 1.3629 (1.3876)  loss_cons: 0.5129 (0.5512)  time: 0.5988  data: 0.1827  max mem: 4020
+Epoch: [61]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.1818 (3.4098)  loss_bbox: 1.3378 (1.4409)  loss_giou: 1.3964 (1.3857)  loss_cons: 0.5535 (0.5832)  time: 0.5519  data: 0.1361  max mem: 4020
+Epoch: [61] Total time: 0:00:08 (0.5663 s / it)
+Averaged stats: lr: 0.000100  loss: 3.1818 (3.4098)  loss_bbox: 1.3378 (1.4409)  loss_giou: 1.3964 (1.3857)  loss_cons: 0.5535 (0.5832)
+Epoch: [62]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 3.3025 (3.3025)  loss_bbox: 1.3397 (1.3397)  loss_giou: 1.3163 (1.3163)  loss_cons: 0.6465 (0.6465)  time: 2.0852  data: 1.6526  max mem: 4020
+Epoch: [62]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.3025 (3.3969)  loss_bbox: 1.3550 (1.4183)  loss_giou: 1.3558 (1.3654)  loss_cons: 0.5485 (0.6133)  time: 0.5933  data: 0.1759  max mem: 4020
+Epoch: [62]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.3136 (3.3830)  loss_bbox: 1.3550 (1.4056)  loss_giou: 1.3558 (1.3666)  loss_cons: 0.6240 (0.6109)  time: 0.5470  data: 0.1310  max mem: 4020
+Epoch: [62] Total time: 0:00:08 (0.5582 s / it)
+Averaged stats: lr: 0.000100  loss: 3.3136 (3.3830)  loss_bbox: 1.3550 (1.4056)  loss_giou: 1.3558 (1.3666)  loss_cons: 0.6240 (0.6109)
+Epoch: [63]  [ 0/15]  eta: 0:00:34  lr: 0.000100  loss: 4.0248 (4.0248)  loss_bbox: 1.7243 (1.7243)  loss_giou: 1.3802 (1.3802)  loss_cons: 0.9203 (0.9203)  time: 2.2944  data: 1.8794  max mem: 4020
+Epoch: [63]  [10/15]  eta: 0:00:03  lr: 0.000100  loss: 3.2981 (3.4081)  loss_bbox: 1.4356 (1.4640)  loss_giou: 1.3552 (1.3543)  loss_cons: 0.5851 (0.5898)  time: 0.6039  data: 0.1890  max mem: 4020
+Epoch: [63]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.2981 (3.3889)  loss_bbox: 1.4340 (1.4612)  loss_giou: 1.3552 (1.3466)  loss_cons: 0.5851 (0.5811)  time: 0.5562  data: 0.1407  max mem: 4020
+Epoch: [63] Total time: 0:00:08 (0.5672 s / it)
+Averaged stats: lr: 0.000100  loss: 3.2981 (3.3889)  loss_bbox: 1.4340 (1.4612)  loss_giou: 1.3552 (1.3466)  loss_cons: 0.5851 (0.5811)
+Epoch: [64]  [ 0/15]  eta: 0:00:31  lr: 0.000100  loss: 2.9679 (2.9679)  loss_bbox: 1.1857 (1.1857)  loss_giou: 1.2978 (1.2978)  loss_cons: 0.4844 (0.4844)  time: 2.1031  data: 1.6944  max mem: 4020
+Epoch: [64]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.4638 (3.5195)  loss_bbox: 1.4730 (1.4858)  loss_giou: 1.3779 (1.3722)  loss_cons: 0.6174 (0.6616)  time: 0.5722  data: 0.1673  max mem: 4020
+Epoch: [64]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.4638 (3.5076)  loss_bbox: 1.4730 (1.4935)  loss_giou: 1.3824 (1.3806)  loss_cons: 0.6174 (0.6336)  time: 0.5296  data: 0.1247  max mem: 4020
+Epoch: [64] Total time: 0:00:08 (0.5401 s / it)
+Averaged stats: lr: 0.000100  loss: 3.4638 (3.5076)  loss_bbox: 1.4730 (1.4935)  loss_giou: 1.3824 (1.3806)  loss_cons: 0.6174 (0.6336)
+Test:  [ 0/76]  eta: 0:02:49  loss: 3.1638 (3.1638)  loss_bbox: 1.7454 (1.7454)  loss_giou: 1.4184 (1.4184)  time: 2.2259  data: 2.0164  max mem: 4020
+Test:  [10/76]  eta: 0:00:26  loss: 3.0111 (2.9885)  loss_bbox: 1.6178 (1.5717)  loss_giou: 1.4201 (1.4169)  time: 0.3962  data: 0.2227  max mem: 4020
+Test:  [20/76]  eta: 0:00:17  loss: 3.0111 (3.0047)  loss_bbox: 1.5695 (1.5704)  loss_giou: 1.4244 (1.4343)  time: 0.2202  data: 0.0513  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.9270 (2.9900)  loss_bbox: 1.5689 (1.5560)  loss_giou: 1.4244 (1.4340)  time: 0.2013  data: 0.0337  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9697 (2.9940)  loss_bbox: 1.5138 (1.5544)  loss_giou: 1.4564 (1.4396)  time: 0.2016  data: 0.0330  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.9697 (2.9853)  loss_bbox: 1.5150 (1.5489)  loss_giou: 1.4320 (1.4364)  time: 0.2142  data: 0.0463  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.9934 (3.0023)  loss_bbox: 1.5783 (1.5603)  loss_giou: 1.4442 (1.4420)  time: 0.1960  data: 0.0316  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9353 (2.9943)  loss_bbox: 1.5143 (1.5567)  loss_giou: 1.4406 (1.4376)  time: 0.1959  data: 0.0326  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.9096 (2.9802)  loss_bbox: 1.4889 (1.5448)  loss_giou: 1.4210 (1.4354)  time: 0.1797  data: 0.0221  max mem: 4020
+Test: Total time: 0:00:17 (0.2302 s / it)
+Averaged stats: loss: 2.9096 (2.9802)  loss_bbox: 1.4889 (1.5448)  loss_giou: 1.4210 (1.4354)
+Accumulating evaluation results...
+DONE (t=0.14s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.005
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.026
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.022
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.037
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.037
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.038
+Epoch: [65]  [ 0/15]  eta: 0:00:32  lr: 0.000100  loss: 3.1953 (3.1953)  loss_bbox: 1.2387 (1.2387)  loss_giou: 1.3435 (1.3435)  loss_cons: 0.6130 (0.6130)  time: 2.1844  data: 1.7744  max mem: 4020
+Epoch: [65]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.3217 (3.5483)  loss_bbox: 1.4565 (1.4948)  loss_giou: 1.3728 (1.4040)  loss_cons: 0.5838 (0.6495)  time: 0.5882  data: 0.1754  max mem: 4020
+Epoch: [65]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.3136 (3.4696)  loss_bbox: 1.4025 (1.4675)  loss_giou: 1.3717 (1.3880)  loss_cons: 0.5151 (0.6142)  time: 0.5451  data: 0.1317  max mem: 4020
+Epoch: [65] Total time: 0:00:08 (0.5566 s / it)
+Averaged stats: lr: 0.000100  loss: 3.3136 (3.4696)  loss_bbox: 1.4025 (1.4675)  loss_giou: 1.3717 (1.3880)  loss_cons: 0.5151 (0.6142)
+Epoch: [66]  [ 0/15]  eta: 0:00:32  lr: 0.000100  loss: 3.1877 (3.1877)  loss_bbox: 1.3298 (1.3298)  loss_giou: 1.4042 (1.4042)  loss_cons: 0.4537 (0.4537)  time: 2.1446  data: 1.7320  max mem: 4020
+Epoch: [66]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.3931 (3.3712)  loss_bbox: 1.4036 (1.4325)  loss_giou: 1.4042 (1.3760)  loss_cons: 0.5750 (0.5627)  time: 0.5878  data: 0.1790  max mem: 4020
+Epoch: [66]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.2650 (3.3801)  loss_bbox: 1.3667 (1.4238)  loss_giou: 1.4029 (1.3810)  loss_cons: 0.5750 (0.5753)  time: 0.5423  data: 0.1335  max mem: 4020
+Epoch: [66] Total time: 0:00:08 (0.5525 s / it)
+Averaged stats: lr: 0.000100  loss: 3.2650 (3.3801)  loss_bbox: 1.3667 (1.4238)  loss_giou: 1.4029 (1.3810)  loss_cons: 0.5750 (0.5753)
+Epoch: [67]  [ 0/15]  eta: 0:00:32  lr: 0.000100  loss: 3.0587 (3.0587)  loss_bbox: 1.2539 (1.2539)  loss_giou: 1.2961 (1.2961)  loss_cons: 0.5087 (0.5087)  time: 2.1894  data: 1.7746  max mem: 4020
+Epoch: [67]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.2598 (3.2840)  loss_bbox: 1.3771 (1.3967)  loss_giou: 1.3456 (1.3510)  loss_cons: 0.5181 (0.5362)  time: 0.5928  data: 0.1780  max mem: 4020
+Epoch: [67]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.2717 (3.3766)  loss_bbox: 1.3875 (1.4140)  loss_giou: 1.3466 (1.3578)  loss_cons: 0.5229 (0.6048)  time: 0.5466  data: 0.1327  max mem: 4020
+Epoch: [67] Total time: 0:00:08 (0.5573 s / it)
+Averaged stats: lr: 0.000100  loss: 3.2717 (3.3766)  loss_bbox: 1.3875 (1.4140)  loss_giou: 1.3466 (1.3578)  loss_cons: 0.5229 (0.6048)
+Epoch: [68]  [ 0/15]  eta: 0:00:28  lr: 0.000100  loss: 3.1104 (3.1104)  loss_bbox: 1.2616 (1.2616)  loss_giou: 1.3453 (1.3453)  loss_cons: 0.5035 (0.5035)  time: 1.9125  data: 1.5018  max mem: 4020
+Epoch: [68]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.1739 (3.2184)  loss_bbox: 1.4022 (1.3883)  loss_giou: 1.3137 (1.3330)  loss_cons: 0.4677 (0.4971)  time: 0.5658  data: 0.1576  max mem: 4020
+Epoch: [68]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.1739 (3.2944)  loss_bbox: 1.3001 (1.3915)  loss_giou: 1.3137 (1.3338)  loss_cons: 0.5046 (0.5690)  time: 0.5266  data: 0.1185  max mem: 4020
+Epoch: [68] Total time: 0:00:08 (0.5377 s / it)
+Averaged stats: lr: 0.000100  loss: 3.1739 (3.2944)  loss_bbox: 1.3001 (1.3915)  loss_giou: 1.3137 (1.3338)  loss_cons: 0.5046 (0.5690)
+Epoch: [69]  [ 0/15]  eta: 0:00:32  lr: 0.000100  loss: 3.3474 (3.3474)  loss_bbox: 1.3949 (1.3949)  loss_giou: 1.3422 (1.3422)  loss_cons: 0.6104 (0.6104)  time: 2.1340  data: 1.7137  max mem: 4020
+Epoch: [69]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.1152 (3.1192)  loss_bbox: 1.2911 (1.2984)  loss_giou: 1.3373 (1.3271)  loss_cons: 0.4688 (0.4937)  time: 0.5841  data: 0.1629  max mem: 4020
+Epoch: [69]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.1152 (3.1613)  loss_bbox: 1.2962 (1.3099)  loss_giou: 1.3234 (1.3251)  loss_cons: 0.5420 (0.5263)  time: 0.5423  data: 0.1215  max mem: 4020
+Epoch: [69] Total time: 0:00:08 (0.5529 s / it)
+Averaged stats: lr: 0.000100  loss: 3.1152 (3.1613)  loss_bbox: 1.2962 (1.3099)  loss_giou: 1.3234 (1.3251)  loss_cons: 0.5420 (0.5263)
+Test:  [ 0/76]  eta: 0:01:58  loss: 3.0071 (3.0071)  loss_bbox: 1.6546 (1.6546)  loss_giou: 1.3525 (1.3525)  time: 1.5592  data: 1.3531  max mem: 4020
+Test:  [10/76]  eta: 0:00:26  loss: 3.0071 (2.9909)  loss_bbox: 1.6431 (1.5897)  loss_giou: 1.3820 (1.4012)  time: 0.3971  data: 0.2161  max mem: 4020
+Test:  [20/76]  eta: 0:00:17  loss: 2.9558 (2.9821)  loss_bbox: 1.5469 (1.5752)  loss_giou: 1.4064 (1.4068)  time: 0.2513  data: 0.0756  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.8733 (2.9579)  loss_bbox: 1.5036 (1.5557)  loss_giou: 1.4064 (1.4022)  time: 0.2096  data: 0.0362  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.9075 (2.9659)  loss_bbox: 1.5090 (1.5564)  loss_giou: 1.4136 (1.4095)  time: 0.2100  data: 0.0385  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.9075 (2.9546)  loss_bbox: 1.5090 (1.5491)  loss_giou: 1.3913 (1.4055)  time: 0.2246  data: 0.0551  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.9137 (2.9706)  loss_bbox: 1.5073 (1.5596)  loss_giou: 1.4113 (1.4110)  time: 0.1998  data: 0.0321  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.9603 (2.9660)  loss_bbox: 1.5324 (1.5595)  loss_giou: 1.4157 (1.4065)  time: 0.1879  data: 0.0228  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.8460 (2.9553)  loss_bbox: 1.4862 (1.5490)  loss_giou: 1.3828 (1.4064)  time: 0.1825  data: 0.0228  max mem: 4020
+Test: Total time: 0:00:17 (0.2337 s / it)
+Averaged stats: loss: 2.8460 (2.9553)  loss_bbox: 1.4862 (1.5490)  loss_giou: 1.3828 (1.4064)
+Accumulating evaluation results...
+DONE (t=0.12s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.005
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.028
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.023
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.040
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.040
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.040
+Epoch: [70]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 3.2342 (3.2342)  loss_bbox: 1.3197 (1.3197)  loss_giou: 1.2949 (1.2949)  loss_cons: 0.6196 (0.6196)  time: 2.0207  data: 1.6047  max mem: 4020
+Epoch: [70]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.2706 (3.2480)  loss_bbox: 1.3197 (1.3231)  loss_giou: 1.3286 (1.3436)  loss_cons: 0.5280 (0.5813)  time: 0.5788  data: 0.1659  max mem: 4020
+Epoch: [70]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.2373 (3.2311)  loss_bbox: 1.3143 (1.3183)  loss_giou: 1.3479 (1.3505)  loss_cons: 0.5280 (0.5623)  time: 0.5372  data: 0.1250  max mem: 4020
+Epoch: [70] Total time: 0:00:08 (0.5487 s / it)
+Averaged stats: lr: 0.000100  loss: 3.2373 (3.2311)  loss_bbox: 1.3143 (1.3183)  loss_giou: 1.3479 (1.3505)  loss_cons: 0.5280 (0.5623)
+Epoch: [71]  [ 0/15]  eta: 0:00:30  lr: 0.000100  loss: 2.5587 (2.5587)  loss_bbox: 0.9211 (0.9211)  loss_giou: 1.2222 (1.2222)  loss_cons: 0.4155 (0.4155)  time: 2.0180  data: 1.6075  max mem: 4020
+Epoch: [71]  [10/15]  eta: 0:00:02  lr: 0.000100  loss: 3.0475 (3.1258)  loss_bbox: 1.2521 (1.2715)  loss_giou: 1.3388 (1.3211)  loss_cons: 0.4954 (0.5333)  time: 0.5714  data: 0.1601  max mem: 4020
+Epoch: [71]  [14/15]  eta: 0:00:00  lr: 0.000100  loss: 3.2097 (3.2123)  loss_bbox: 1.2844 (1.3309)  loss_giou: 1.3429 (1.3334)  loss_cons: 0.5293 (0.5480)  time: 0.5314  data: 0.1195  max mem: 4020
+Epoch: [71] Total time: 0:00:08 (0.5420 s / it)
+Averaged stats: lr: 0.000100  loss: 3.2097 (3.2123)  loss_bbox: 1.2844 (1.3309)  loss_giou: 1.3429 (1.3334)  loss_cons: 0.5293 (0.5480)
+Epoch: [72]  [ 0/15]  eta: 0:00:32  lr: 0.000010  loss: 3.4407 (3.4407)  loss_bbox: 1.5521 (1.5521)  loss_giou: 1.3565 (1.3565)  loss_cons: 0.5321 (0.5321)  time: 2.1692  data: 1.7561  max mem: 4020
+Epoch: [72]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.1970 (3.1653)  loss_bbox: 1.2781 (1.2646)  loss_giou: 1.3263 (1.3341)  loss_cons: 0.5321 (0.5666)  time: 0.5887  data: 0.1761  max mem: 4020
+Epoch: [72]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.1775 (3.1812)  loss_bbox: 1.2781 (1.2794)  loss_giou: 1.3237 (1.3292)  loss_cons: 0.5316 (0.5727)  time: 0.5446  data: 0.1313  max mem: 4020
+Epoch: [72] Total time: 0:00:08 (0.5558 s / it)
+Averaged stats: lr: 0.000010  loss: 3.1775 (3.1812)  loss_bbox: 1.2781 (1.2794)  loss_giou: 1.3237 (1.3292)  loss_cons: 0.5316 (0.5727)
+Epoch: [73]  [ 0/15]  eta: 0:00:34  lr: 0.000010  loss: 2.9583 (2.9583)  loss_bbox: 1.3487 (1.3487)  loss_giou: 1.3427 (1.3427)  loss_cons: 0.2670 (0.2670)  time: 2.3008  data: 1.8831  max mem: 4020
+Epoch: [73]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.0389 (3.0741)  loss_bbox: 1.3073 (1.2699)  loss_giou: 1.3399 (1.3258)  loss_cons: 0.4503 (0.4784)  time: 0.5916  data: 0.1820  max mem: 4020
+Epoch: [73]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0389 (3.0558)  loss_bbox: 1.2805 (1.2601)  loss_giou: 1.3142 (1.3179)  loss_cons: 0.4503 (0.4778)  time: 0.5452  data: 0.1355  max mem: 4020
+Epoch: [73] Total time: 0:00:08 (0.5560 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0389 (3.0558)  loss_bbox: 1.2805 (1.2601)  loss_giou: 1.3142 (1.3179)  loss_cons: 0.4503 (0.4778)
+Epoch: [74]  [ 0/15]  eta: 0:00:37  lr: 0.000010  loss: 2.8903 (2.8903)  loss_bbox: 1.1969 (1.1969)  loss_giou: 1.2776 (1.2776)  loss_cons: 0.4158 (0.4158)  time: 2.4856  data: 2.0738  max mem: 4020
+Epoch: [74]  [10/15]  eta: 0:00:03  lr: 0.000010  loss: 3.0099 (3.0227)  loss_bbox: 1.2533 (1.2463)  loss_giou: 1.2776 (1.2914)  loss_cons: 0.4914 (0.4850)  time: 0.6109  data: 0.1958  max mem: 4020
+Epoch: [74]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0536 (3.1876)  loss_bbox: 1.2678 (1.3182)  loss_giou: 1.3072 (1.3123)  loss_cons: 0.5309 (0.5571)  time: 0.5622  data: 0.1466  max mem: 4020
+Epoch: [74] Total time: 0:00:08 (0.5751 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0536 (3.1876)  loss_bbox: 1.2678 (1.3182)  loss_giou: 1.3072 (1.3123)  loss_cons: 0.5309 (0.5571)
+Test:  [ 0/76]  eta: 0:02:41  loss: 2.8140 (2.8140)  loss_bbox: 1.4746 (1.4746)  loss_giou: 1.3394 (1.3394)  time: 2.1239  data: 1.8351  max mem: 4020
+Test:  [10/76]  eta: 0:00:28  loss: 2.8140 (2.8256)  loss_bbox: 1.4487 (1.4497)  loss_giou: 1.3711 (1.3759)  time: 0.4381  data: 0.2528  max mem: 4020
+Test:  [20/76]  eta: 0:00:19  loss: 2.8213 (2.8291)  loss_bbox: 1.4446 (1.4447)  loss_giou: 1.4091 (1.3844)  time: 0.2506  data: 0.0789  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.7853 (2.8056)  loss_bbox: 1.3875 (1.4265)  loss_giou: 1.3823 (1.3791)  time: 0.2042  data: 0.0361  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.7853 (2.8137)  loss_bbox: 1.4041 (1.4306)  loss_giou: 1.3772 (1.3831)  time: 0.2029  data: 0.0349  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.7700 (2.7986)  loss_bbox: 1.4174 (1.4190)  loss_giou: 1.3718 (1.3796)  time: 0.2240  data: 0.0574  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.7911 (2.8214)  loss_bbox: 1.4295 (1.4340)  loss_giou: 1.3825 (1.3874)  time: 0.1948  data: 0.0306  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8371 (2.8227)  loss_bbox: 1.4926 (1.4390)  loss_giou: 1.3831 (1.3837)  time: 0.1861  data: 0.0214  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.7397 (2.8192)  loss_bbox: 1.3657 (1.4325)  loss_giou: 1.4055 (1.3867)  time: 0.1844  data: 0.0215  max mem: 4020
+Test: Total time: 0:00:18 (0.2382 s / it)
+Averaged stats: loss: 2.7397 (2.8192)  loss_bbox: 1.3657 (1.4325)  loss_giou: 1.4055 (1.3867)
+Accumulating evaluation results...
+DONE (t=0.09s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.007
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.037
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.007
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.027
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.045
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.045
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.046
+Epoch: [75]  [ 0/15]  eta: 0:00:28  lr: 0.000010  loss: 3.2564 (3.2564)  loss_bbox: 1.3002 (1.3002)  loss_giou: 1.3821 (1.3821)  loss_cons: 0.5741 (0.5741)  time: 1.9077  data: 1.4850  max mem: 4020
+Epoch: [75]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.1456 (3.1372)  loss_bbox: 1.3002 (1.2497)  loss_giou: 1.3316 (1.3158)  loss_cons: 0.4702 (0.5717)  time: 0.5705  data: 0.1559  max mem: 4020
+Epoch: [75]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0813 (3.1050)  loss_bbox: 1.2997 (1.2427)  loss_giou: 1.3370 (1.3263)  loss_cons: 0.4605 (0.5361)  time: 0.5298  data: 0.1163  max mem: 4020
+Epoch: [75] Total time: 0:00:08 (0.5402 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0813 (3.1050)  loss_bbox: 1.2997 (1.2427)  loss_giou: 1.3370 (1.3263)  loss_cons: 0.4605 (0.5361)
+Epoch: [76]  [ 0/15]  eta: 0:00:31  lr: 0.000010  loss: 3.5923 (3.5923)  loss_bbox: 1.5276 (1.5276)  loss_giou: 1.4356 (1.4356)  loss_cons: 0.6291 (0.6291)  time: 2.1088  data: 1.6919  max mem: 4020
+Epoch: [76]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.3504 (3.2445)  loss_bbox: 1.3581 (1.3182)  loss_giou: 1.3421 (1.3231)  loss_cons: 0.6291 (0.6031)  time: 0.5728  data: 0.1616  max mem: 4020
+Epoch: [76]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.3172 (3.2140)  loss_bbox: 1.3195 (1.3165)  loss_giou: 1.3421 (1.3270)  loss_cons: 0.5881 (0.5705)  time: 0.5320  data: 0.1206  max mem: 4020
+Epoch: [76] Total time: 0:00:08 (0.5439 s / it)
+Averaged stats: lr: 0.000010  loss: 3.3172 (3.2140)  loss_bbox: 1.3195 (1.3165)  loss_giou: 1.3421 (1.3270)  loss_cons: 0.5881 (0.5705)
+Epoch: [77]  [ 0/15]  eta: 0:00:30  lr: 0.000010  loss: 2.7802 (2.7802)  loss_bbox: 1.1671 (1.1671)  loss_giou: 1.3345 (1.3345)  loss_cons: 0.2786 (0.2786)  time: 2.0070  data: 1.4863  max mem: 4020
+Epoch: [77]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.1248 (3.1119)  loss_bbox: 1.2576 (1.2732)  loss_giou: 1.3345 (1.3272)  loss_cons: 0.4835 (0.5115)  time: 0.5764  data: 0.1614  max mem: 4020
+Epoch: [77]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.1248 (3.1279)  loss_bbox: 1.2576 (1.2743)  loss_giou: 1.3223 (1.3217)  loss_cons: 0.5108 (0.5320)  time: 0.5331  data: 0.1205  max mem: 4020
+Epoch: [77] Total time: 0:00:08 (0.5452 s / it)
+Averaged stats: lr: 0.000010  loss: 3.1248 (3.1279)  loss_bbox: 1.2576 (1.2743)  loss_giou: 1.3223 (1.3217)  loss_cons: 0.5108 (0.5320)
+Epoch: [78]  [ 0/15]  eta: 0:00:30  lr: 0.000010  loss: 3.2685 (3.2685)  loss_bbox: 1.0633 (1.0633)  loss_giou: 1.3073 (1.3073)  loss_cons: 0.8978 (0.8978)  time: 2.0240  data: 1.6122  max mem: 4020
+Epoch: [78]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.1427 (3.0874)  loss_bbox: 1.2401 (1.2419)  loss_giou: 1.2930 (1.2719)  loss_cons: 0.5649 (0.5736)  time: 0.5683  data: 0.1562  max mem: 4020
+Epoch: [78]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.1195 (3.0791)  loss_bbox: 1.2405 (1.2485)  loss_giou: 1.2930 (1.2733)  loss_cons: 0.5649 (0.5573)  time: 0.5279  data: 0.1167  max mem: 4020
+Epoch: [78] Total time: 0:00:08 (0.5395 s / it)
+Averaged stats: lr: 0.000010  loss: 3.1195 (3.0791)  loss_bbox: 1.2405 (1.2485)  loss_giou: 1.2930 (1.2733)  loss_cons: 0.5649 (0.5573)
+Epoch: [79]  [ 0/15]  eta: 0:00:27  lr: 0.000010  loss: 3.1463 (3.1463)  loss_bbox: 1.2107 (1.2107)  loss_giou: 1.3598 (1.3598)  loss_cons: 0.5757 (0.5757)  time: 1.8607  data: 1.4484  max mem: 4020
+Epoch: [79]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.0025 (3.1868)  loss_bbox: 1.1950 (1.2624)  loss_giou: 1.2988 (1.3094)  loss_cons: 0.5650 (0.6150)  time: 0.5633  data: 0.1536  max mem: 4020
+Epoch: [79]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0590 (3.1790)  loss_bbox: 1.2107 (1.2720)  loss_giou: 1.2988 (1.3038)  loss_cons: 0.5733 (0.6031)  time: 0.5264  data: 0.1163  max mem: 4020
+Epoch: [79] Total time: 0:00:08 (0.5368 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0590 (3.1790)  loss_bbox: 1.2107 (1.2720)  loss_giou: 1.2988 (1.3038)  loss_cons: 0.5733 (0.6031)
+Test:  [ 0/76]  eta: 0:02:26  loss: 2.8271 (2.8271)  loss_bbox: 1.4890 (1.4890)  loss_giou: 1.3381 (1.3381)  time: 1.9298  data: 1.7287  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.8304 (2.8387)  loss_bbox: 1.4498 (1.4653)  loss_giou: 1.3647 (1.3734)  time: 0.4189  data: 0.2401  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.7996 (2.8383)  loss_bbox: 1.4331 (1.4564)  loss_giou: 1.3825 (1.3818)  time: 0.2576  data: 0.0816  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.7633 (2.8170)  loss_bbox: 1.4255 (1.4394)  loss_giou: 1.3825 (1.3776)  time: 0.2136  data: 0.0401  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.7777 (2.8255)  loss_bbox: 1.4059 (1.4439)  loss_giou: 1.3846 (1.3816)  time: 0.2047  data: 0.0347  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.7527 (2.8091)  loss_bbox: 1.4239 (1.4321)  loss_giou: 1.3633 (1.3770)  time: 0.2199  data: 0.0510  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.7453 (2.8319)  loss_bbox: 1.4239 (1.4469)  loss_giou: 1.3786 (1.3850)  time: 0.2009  data: 0.0319  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8707 (2.8339)  loss_bbox: 1.4932 (1.4523)  loss_giou: 1.3922 (1.3816)  time: 0.1988  data: 0.0296  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.7345 (2.8303)  loss_bbox: 1.4130 (1.4464)  loss_giou: 1.4062 (1.3839)  time: 0.1860  data: 0.0219  max mem: 4020
+Test: Total time: 0:00:18 (0.2397 s / it)
+Averaged stats: loss: 2.7345 (2.8303)  loss_bbox: 1.4130 (1.4464)  loss_giou: 1.4062 (1.3839)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.034
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.006
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.025
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.044
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.044
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.044
+Epoch: [80]  [ 0/15]  eta: 0:00:31  lr: 0.000010  loss: 2.4890 (2.4890)  loss_bbox: 1.0575 (1.0575)  loss_giou: 1.1562 (1.1562)  loss_cons: 0.2753 (0.2753)  time: 2.1186  data: 1.6978  max mem: 4020
+Epoch: [80]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.1320 (3.1256)  loss_bbox: 1.2184 (1.2606)  loss_giou: 1.3112 (1.2904)  loss_cons: 0.5629 (0.5746)  time: 0.5894  data: 0.1735  max mem: 4020
+Epoch: [80]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0721 (3.0900)  loss_bbox: 1.2184 (1.2482)  loss_giou: 1.3058 (1.2915)  loss_cons: 0.5313 (0.5504)  time: 0.5467  data: 0.1302  max mem: 4020
+Epoch: [80] Total time: 0:00:08 (0.5579 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0721 (3.0900)  loss_bbox: 1.2184 (1.2482)  loss_giou: 1.3058 (1.2915)  loss_cons: 0.5313 (0.5504)
+Epoch: [81]  [ 0/15]  eta: 0:00:30  lr: 0.000010  loss: 2.7444 (2.7444)  loss_bbox: 1.1466 (1.1466)  loss_giou: 1.2942 (1.2942)  loss_cons: 0.3037 (0.3037)  time: 2.0037  data: 1.5964  max mem: 4020
+Epoch: [81]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 2.7782 (3.0227)  loss_bbox: 1.1146 (1.2048)  loss_giou: 1.2942 (1.3043)  loss_cons: 0.4267 (0.5136)  time: 0.5670  data: 0.1597  max mem: 4020
+Epoch: [81]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0760 (3.0728)  loss_bbox: 1.1514 (1.2401)  loss_giou: 1.3135 (1.3039)  loss_cons: 0.4267 (0.5288)  time: 0.5273  data: 0.1204  max mem: 4020
+Epoch: [81] Total time: 0:00:08 (0.5376 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0760 (3.0728)  loss_bbox: 1.1514 (1.2401)  loss_giou: 1.3135 (1.3039)  loss_cons: 0.4267 (0.5288)
+Epoch: [82]  [ 0/15]  eta: 0:00:31  lr: 0.000010  loss: 3.0154 (3.0154)  loss_bbox: 1.3284 (1.3284)  loss_giou: 1.3355 (1.3355)  loss_cons: 0.3515 (0.3515)  time: 2.1306  data: 1.7163  max mem: 4020
+Epoch: [82]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.0154 (3.0741)  loss_bbox: 1.2108 (1.2672)  loss_giou: 1.3312 (1.3180)  loss_cons: 0.4499 (0.4888)  time: 0.5909  data: 0.1776  max mem: 4020
+Epoch: [82]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0154 (3.1009)  loss_bbox: 1.2108 (1.2683)  loss_giou: 1.3254 (1.3129)  loss_cons: 0.5523 (0.5197)  time: 0.5451  data: 0.1324  max mem: 4020
+Epoch: [82] Total time: 0:00:08 (0.5555 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0154 (3.1009)  loss_bbox: 1.2108 (1.2683)  loss_giou: 1.3254 (1.3129)  loss_cons: 0.5523 (0.5197)
+Epoch: [83]  [ 0/15]  eta: 0:00:33  lr: 0.000010  loss: 3.2366 (3.2366)  loss_bbox: 1.2378 (1.2378)  loss_giou: 1.4474 (1.4474)  loss_cons: 0.5514 (0.5514)  time: 2.2285  data: 1.8133  max mem: 4020
+Epoch: [83]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.0547 (3.0047)  loss_bbox: 1.2357 (1.1937)  loss_giou: 1.3104 (1.3214)  loss_cons: 0.5010 (0.4896)  time: 0.5976  data: 0.1829  max mem: 4020
+Epoch: [83]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0547 (2.9874)  loss_bbox: 1.2357 (1.1935)  loss_giou: 1.3104 (1.3098)  loss_cons: 0.5010 (0.4841)  time: 0.5506  data: 0.1360  max mem: 4020
+Epoch: [83] Total time: 0:00:08 (0.5621 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0547 (2.9874)  loss_bbox: 1.2357 (1.1935)  loss_giou: 1.3104 (1.3098)  loss_cons: 0.5010 (0.4841)
+Epoch: [84]  [ 0/15]  eta: 0:00:36  lr: 0.000010  loss: 3.6229 (3.6229)  loss_bbox: 1.6118 (1.6118)  loss_giou: 1.3827 (1.3827)  loss_cons: 0.6283 (0.6283)  time: 2.4566  data: 2.0437  max mem: 4020
+Epoch: [84]  [10/15]  eta: 0:00:03  lr: 0.000010  loss: 3.0262 (3.0998)  loss_bbox: 1.2208 (1.2730)  loss_giou: 1.3220 (1.3166)  loss_cons: 0.4802 (0.5103)  time: 0.6027  data: 0.1949  max mem: 4020
+Epoch: [84]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 2.9898 (3.0500)  loss_bbox: 1.1981 (1.2509)  loss_giou: 1.3220 (1.3127)  loss_cons: 0.4224 (0.4864)  time: 0.5532  data: 0.1453  max mem: 4020
+Epoch: [84] Total time: 0:00:08 (0.5644 s / it)
+Averaged stats: lr: 0.000010  loss: 2.9898 (3.0500)  loss_bbox: 1.1981 (1.2509)  loss_giou: 1.3220 (1.3127)  loss_cons: 0.4224 (0.4864)
+Test:  [ 0/76]  eta: 0:03:22  loss: 2.8556 (2.8556)  loss_bbox: 1.5019 (1.5019)  loss_giou: 1.3538 (1.3538)  time: 2.6666  data: 2.4709  max mem: 4020
+Test:  [10/76]  eta: 0:00:26  loss: 2.8402 (2.8589)  loss_bbox: 1.4488 (1.4771)  loss_giou: 1.3806 (1.3818)  time: 0.4082  data: 0.2357  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.7865 (2.8454)  loss_bbox: 1.4418 (1.4581)  loss_giou: 1.3871 (1.3873)  time: 0.2052  data: 0.0352  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.7447 (2.8200)  loss_bbox: 1.3865 (1.4390)  loss_giou: 1.3834 (1.3810)  time: 0.2038  data: 0.0347  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.7873 (2.8285)  loss_bbox: 1.4153 (1.4434)  loss_giou: 1.3834 (1.3851)  time: 0.2022  data: 0.0343  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.7545 (2.8102)  loss_bbox: 1.4263 (1.4302)  loss_giou: 1.3664 (1.3800)  time: 0.2263  data: 0.0578  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.7573 (2.8313)  loss_bbox: 1.4282 (1.4436)  loss_giou: 1.3789 (1.3877)  time: 0.2027  data: 0.0352  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8556 (2.8321)  loss_bbox: 1.4833 (1.4480)  loss_giou: 1.3918 (1.3841)  time: 0.1886  data: 0.0227  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.7404 (2.8296)  loss_bbox: 1.3922 (1.4429)  loss_giou: 1.3830 (1.3868)  time: 0.1837  data: 0.0228  max mem: 4020
+Test: Total time: 0:00:17 (0.2351 s / it)
+Averaged stats: loss: 2.7404 (2.8296)  loss_bbox: 1.3922 (1.4429)  loss_giou: 1.3830 (1.3868)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.035
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.006
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.025
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.044
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.044
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.044
+Epoch: [85]  [ 0/15]  eta: 0:00:35  lr: 0.000010  loss: 3.0611 (3.0611)  loss_bbox: 1.1118 (1.1118)  loss_giou: 1.2731 (1.2731)  loss_cons: 0.6762 (0.6762)  time: 2.3554  data: 1.9383  max mem: 4020
+Epoch: [85]  [10/15]  eta: 0:00:03  lr: 0.000010  loss: 2.9347 (2.9229)  loss_bbox: 1.1874 (1.1774)  loss_giou: 1.3001 (1.3000)  loss_cons: 0.4046 (0.4455)  time: 0.6100  data: 0.1917  max mem: 4020
+Epoch: [85]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0409 (2.9972)  loss_bbox: 1.1913 (1.2073)  loss_giou: 1.3246 (1.3104)  loss_cons: 0.4432 (0.4795)  time: 0.5604  data: 0.1424  max mem: 4020
+Epoch: [85] Total time: 0:00:08 (0.5707 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0409 (2.9972)  loss_bbox: 1.1913 (1.2073)  loss_giou: 1.3246 (1.3104)  loss_cons: 0.4432 (0.4795)
+Epoch: [86]  [ 0/15]  eta: 0:00:31  lr: 0.000010  loss: 2.7850 (2.7850)  loss_bbox: 1.2027 (1.2027)  loss_giou: 1.2798 (1.2798)  loss_cons: 0.3025 (0.3025)  time: 2.0938  data: 1.6891  max mem: 4020
+Epoch: [86]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 2.9969 (3.0627)  loss_bbox: 1.2777 (1.2670)  loss_giou: 1.3007 (1.3006)  loss_cons: 0.4013 (0.4951)  time: 0.5667  data: 0.1618  max mem: 4020
+Epoch: [86]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0541 (3.0471)  loss_bbox: 1.2545 (1.2353)  loss_giou: 1.3115 (1.3084)  loss_cons: 0.5350 (0.5033)  time: 0.5267  data: 0.1216  max mem: 4020
+Epoch: [86] Total time: 0:00:08 (0.5388 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0541 (3.0471)  loss_bbox: 1.2545 (1.2353)  loss_giou: 1.3115 (1.3084)  loss_cons: 0.5350 (0.5033)
+Epoch: [87]  [ 0/15]  eta: 0:00:32  lr: 0.000010  loss: 3.8456 (3.8456)  loss_bbox: 1.4667 (1.4667)  loss_giou: 1.3553 (1.3553)  loss_cons: 1.0236 (1.0236)  time: 2.1502  data: 1.7412  max mem: 4020
+Epoch: [87]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 2.8779 (3.0764)  loss_bbox: 1.2308 (1.2339)  loss_giou: 1.3102 (1.2909)  loss_cons: 0.4228 (0.5516)  time: 0.5830  data: 0.1766  max mem: 4020
+Epoch: [87]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.1098 (3.1072)  loss_bbox: 1.2308 (1.2524)  loss_giou: 1.3102 (1.2975)  loss_cons: 0.5733 (0.5574)  time: 0.5374  data: 0.1315  max mem: 4020
+Epoch: [87] Total time: 0:00:08 (0.5470 s / it)
+Averaged stats: lr: 0.000010  loss: 3.1098 (3.1072)  loss_bbox: 1.2308 (1.2524)  loss_giou: 1.3102 (1.2975)  loss_cons: 0.5733 (0.5574)
+Epoch: [88]  [ 0/15]  eta: 0:00:31  lr: 0.000010  loss: 3.5435 (3.5435)  loss_bbox: 1.4053 (1.4053)  loss_giou: 1.3785 (1.3785)  loss_cons: 0.7597 (0.7597)  time: 2.1185  data: 1.7155  max mem: 4020
+Epoch: [88]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.0673 (3.0319)  loss_bbox: 1.1575 (1.2348)  loss_giou: 1.2836 (1.2867)  loss_cons: 0.4682 (0.5104)  time: 0.5758  data: 0.1699  max mem: 4020
+Epoch: [88]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0673 (3.0365)  loss_bbox: 1.1575 (1.2303)  loss_giou: 1.2836 (1.2911)  loss_cons: 0.4682 (0.5151)  time: 0.5335  data: 0.1276  max mem: 4020
+Epoch: [88] Total time: 0:00:08 (0.5449 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0673 (3.0365)  loss_bbox: 1.1575 (1.2303)  loss_giou: 1.2836 (1.2911)  loss_cons: 0.4682 (0.5151)
+Epoch: [89]  [ 0/15]  eta: 0:00:29  lr: 0.000010  loss: 2.6954 (2.6954)  loss_bbox: 1.0525 (1.0525)  loss_giou: 1.2775 (1.2775)  loss_cons: 0.3654 (0.3654)  time: 1.9826  data: 1.5605  max mem: 4020
+Epoch: [89]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 3.1674 (3.2194)  loss_bbox: 1.3368 (1.2998)  loss_giou: 1.3040 (1.3229)  loss_cons: 0.5444 (0.5968)  time: 0.5766  data: 0.1665  max mem: 4020
+Epoch: [89]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0831 (3.0708)  loss_bbox: 1.2363 (1.2263)  loss_giou: 1.2779 (1.3006)  loss_cons: 0.4580 (0.5439)  time: 0.5344  data: 0.1241  max mem: 4020
+Epoch: [89] Total time: 0:00:08 (0.5489 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0831 (3.0708)  loss_bbox: 1.2363 (1.2263)  loss_giou: 1.2779 (1.3006)  loss_cons: 0.4580 (0.5439)
+Test:  [ 0/76]  eta: 0:03:02  loss: 2.8967 (2.8967)  loss_bbox: 1.5327 (1.5327)  loss_giou: 1.3639 (1.3639)  time: 2.3980  data: 2.1990  max mem: 4020
+Test:  [10/76]  eta: 0:00:28  loss: 2.8092 (2.8380)  loss_bbox: 1.4182 (1.4631)  loss_giou: 1.3813 (1.3749)  time: 0.4293  data: 0.2500  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.7368 (2.8283)  loss_bbox: 1.4119 (1.4463)  loss_giou: 1.3864 (1.3820)  time: 0.2306  data: 0.0555  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.7410 (2.8094)  loss_bbox: 1.3945 (1.4313)  loss_giou: 1.3865 (1.3781)  time: 0.2099  data: 0.0364  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.7809 (2.8170)  loss_bbox: 1.4283 (1.4351)  loss_giou: 1.3865 (1.3820)  time: 0.2127  data: 0.0397  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.7783 (2.8029)  loss_bbox: 1.4330 (1.4257)  loss_giou: 1.3627 (1.3772)  time: 0.2190  data: 0.0499  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.7694 (2.8232)  loss_bbox: 1.4165 (1.4389)  loss_giou: 1.3746 (1.3843)  time: 0.1967  data: 0.0307  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8113 (2.8229)  loss_bbox: 1.4323 (1.4427)  loss_giou: 1.3923 (1.3802)  time: 0.1973  data: 0.0316  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.7250 (2.8197)  loss_bbox: 1.3916 (1.4371)  loss_giou: 1.3869 (1.3826)  time: 0.1833  data: 0.0233  max mem: 4020
+Test: Total time: 0:00:18 (0.2396 s / it)
+Averaged stats: loss: 2.7250 (2.8197)  loss_bbox: 1.3916 (1.4371)  loss_giou: 1.3869 (1.3826)
+Accumulating evaluation results...
+DONE (t=0.12s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.034
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.006
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.025
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.044
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.044
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.045
+Epoch: [90]  [ 0/15]  eta: 0:00:29  lr: 0.000010  loss: 3.5844 (3.5844)  loss_bbox: 1.3845 (1.3845)  loss_giou: 1.3214 (1.3214)  loss_cons: 0.8786 (0.8786)  time: 1.9599  data: 1.5515  max mem: 4020
+Epoch: [90]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 2.9320 (3.0389)  loss_bbox: 1.2683 (1.2440)  loss_giou: 1.3214 (1.2939)  loss_cons: 0.4134 (0.5010)  time: 0.5686  data: 0.1601  max mem: 4020
+Epoch: [90]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 2.9154 (2.9760)  loss_bbox: 1.1869 (1.2032)  loss_giou: 1.3007 (1.2922)  loss_cons: 0.4134 (0.4806)  time: 0.5286  data: 0.1194  max mem: 4020
+Epoch: [90] Total time: 0:00:08 (0.5419 s / it)
+Averaged stats: lr: 0.000010  loss: 2.9154 (2.9760)  loss_bbox: 1.1869 (1.2032)  loss_giou: 1.3007 (1.2922)  loss_cons: 0.4134 (0.4806)
+Epoch: [91]  [ 0/15]  eta: 0:00:32  lr: 0.000010  loss: 2.9634 (2.9634)  loss_bbox: 1.2119 (1.2119)  loss_giou: 1.3107 (1.3107)  loss_cons: 0.4408 (0.4408)  time: 2.1397  data: 1.7190  max mem: 4020
+Epoch: [91]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 2.9634 (3.0259)  loss_bbox: 1.2109 (1.2418)  loss_giou: 1.2865 (1.2834)  loss_cons: 0.4408 (0.5006)  time: 0.5823  data: 0.1672  max mem: 4020
+Epoch: [91]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 2.9634 (2.9939)  loss_bbox: 1.2109 (1.2135)  loss_giou: 1.2865 (1.2875)  loss_cons: 0.4408 (0.4929)  time: 0.5415  data: 0.1259  max mem: 4020
+Epoch: [91] Total time: 0:00:08 (0.5519 s / it)
+Averaged stats: lr: 0.000010  loss: 2.9634 (2.9939)  loss_bbox: 1.2109 (1.2135)  loss_giou: 1.2865 (1.2875)  loss_cons: 0.4408 (0.4929)
+Epoch: [92]  [ 0/15]  eta: 0:00:31  lr: 0.000010  loss: 3.1310 (3.1310)  loss_bbox: 1.3246 (1.3246)  loss_giou: 1.3190 (1.3190)  loss_cons: 0.4873 (0.4873)  time: 2.1046  data: 1.6835  max mem: 4020
+Epoch: [92]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 2.8835 (2.9898)  loss_bbox: 1.2121 (1.2212)  loss_giou: 1.2778 (1.2847)  loss_cons: 0.4873 (0.4839)  time: 0.5870  data: 0.1789  max mem: 4020
+Epoch: [92]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 3.0507 (3.0117)  loss_bbox: 1.2121 (1.2259)  loss_giou: 1.2807 (1.2876)  loss_cons: 0.4873 (0.4983)  time: 0.5421  data: 0.1340  max mem: 4020
+Epoch: [92] Total time: 0:00:08 (0.5535 s / it)
+Averaged stats: lr: 0.000010  loss: 3.0507 (3.0117)  loss_bbox: 1.2121 (1.2259)  loss_giou: 1.2807 (1.2876)  loss_cons: 0.4873 (0.4983)
+Epoch: [93]  [ 0/15]  eta: 0:00:30  lr: 0.000010  loss: 3.0060 (3.0060)  loss_bbox: 1.1554 (1.1554)  loss_giou: 1.3103 (1.3103)  loss_cons: 0.5402 (0.5402)  time: 2.0340  data: 1.5825  max mem: 4020
+Epoch: [93]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 2.9126 (3.0138)  loss_bbox: 1.1678 (1.1991)  loss_giou: 1.3091 (1.2872)  loss_cons: 0.4241 (0.5276)  time: 0.5889  data: 0.1688  max mem: 4020
+Epoch: [93]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 2.9507 (3.0248)  loss_bbox: 1.1678 (1.2193)  loss_giou: 1.3091 (1.2931)  loss_cons: 0.5038 (0.5125)  time: 0.5445  data: 0.1259  max mem: 4020
+Epoch: [93] Total time: 0:00:08 (0.5556 s / it)
+Averaged stats: lr: 0.000010  loss: 2.9507 (3.0248)  loss_bbox: 1.1678 (1.2193)  loss_giou: 1.3091 (1.2931)  loss_cons: 0.5038 (0.5125)
+Epoch: [94]  [ 0/15]  eta: 0:00:29  lr: 0.000010  loss: 3.7244 (3.7244)  loss_bbox: 1.5610 (1.5610)  loss_giou: 1.3498 (1.3498)  loss_cons: 0.8136 (0.8136)  time: 1.9389  data: 1.5330  max mem: 4020
+Epoch: [94]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 2.8611 (2.9405)  loss_bbox: 1.1819 (1.2116)  loss_giou: 1.2719 (1.2840)  loss_cons: 0.4306 (0.4450)  time: 0.5656  data: 0.1569  max mem: 4020
+Epoch: [94]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 2.9098 (2.9812)  loss_bbox: 1.1483 (1.2021)  loss_giou: 1.2849 (1.2867)  loss_cons: 0.4684 (0.4924)  time: 0.5276  data: 0.1169  max mem: 4020
+Epoch: [94] Total time: 0:00:08 (0.5373 s / it)
+Averaged stats: lr: 0.000010  loss: 2.9098 (2.9812)  loss_bbox: 1.1483 (1.2021)  loss_giou: 1.2849 (1.2867)  loss_cons: 0.4684 (0.4924)
+Test:  [ 0/76]  eta: 0:03:28  loss: 2.8826 (2.8826)  loss_bbox: 1.5272 (1.5272)  loss_giou: 1.3555 (1.3555)  time: 2.7462  data: 2.5768  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.8499 (2.8536)  loss_bbox: 1.4837 (1.4719)  loss_giou: 1.3898 (1.3817)  time: 0.4142  data: 0.2414  max mem: 4020
+Test:  [20/76]  eta: 0:00:17  loss: 2.8040 (2.8353)  loss_bbox: 1.4462 (1.4473)  loss_giou: 1.3898 (1.3881)  time: 0.1996  data: 0.0264  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.7491 (2.8083)  loss_bbox: 1.3882 (1.4259)  loss_giou: 1.3851 (1.3824)  time: 0.2042  data: 0.0287  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.8164 (2.8175)  loss_bbox: 1.3881 (1.4298)  loss_giou: 1.3851 (1.3877)  time: 0.2078  data: 0.0345  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.7416 (2.7994)  loss_bbox: 1.3881 (1.4165)  loss_giou: 1.3695 (1.3829)  time: 0.2236  data: 0.0561  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.7519 (2.8194)  loss_bbox: 1.4119 (1.4287)  loss_giou: 1.3859 (1.3907)  time: 0.1983  data: 0.0329  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8059 (2.8154)  loss_bbox: 1.4156 (1.4293)  loss_giou: 1.3921 (1.3861)  time: 0.1860  data: 0.0209  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.7497 (2.8138)  loss_bbox: 1.3686 (1.4247)  loss_giou: 1.3943 (1.3891)  time: 0.1817  data: 0.0220  max mem: 4020
+Test: Total time: 0:00:17 (0.2341 s / it)
+Averaged stats: loss: 2.7497 (2.8138)  loss_bbox: 1.3686 (1.4247)  loss_giou: 1.3943 (1.3891)
+Accumulating evaluation results...
+DONE (t=0.09s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.034
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.006
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.025
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.044
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.044
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.044
+Epoch: [95]  [ 0/15]  eta: 0:00:30  lr: 0.000010  loss: 2.9004 (2.9004)  loss_bbox: 1.0578 (1.0578)  loss_giou: 1.3632 (1.3632)  loss_cons: 0.4794 (0.4794)  time: 2.0056  data: 1.5841  max mem: 4020
+Epoch: [95]  [10/15]  eta: 0:00:02  lr: 0.000010  loss: 2.9466 (2.9778)  loss_bbox: 1.2213 (1.1998)  loss_giou: 1.2780 (1.2855)  loss_cons: 0.4794 (0.4925)  time: 0.5836  data: 0.1729  max mem: 4020
+Epoch: [95]  [14/15]  eta: 0:00:00  lr: 0.000010  loss: 2.9466 (2.9848)  loss_bbox: 1.2105 (1.1982)  loss_giou: 1.2780 (1.2831)  loss_cons: 0.4794 (0.5035)  time: 0.5396  data: 0.1290  max mem: 4020
+Epoch: [95] Total time: 0:00:08 (0.5511 s / it)
+Averaged stats: lr: 0.000010  loss: 2.9466 (2.9848)  loss_bbox: 1.2105 (1.1982)  loss_giou: 1.2780 (1.2831)  loss_cons: 0.4794 (0.5035)
+Epoch: [96]  [ 0/15]  eta: 0:00:32  lr: 0.000001  loss: 3.3633 (3.3633)  loss_bbox: 1.4747 (1.4747)  loss_giou: 1.2710 (1.2710)  loss_cons: 0.6176 (0.6176)  time: 2.1592  data: 1.7445  max mem: 4020
+Epoch: [96]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 2.9342 (2.9364)  loss_bbox: 1.1655 (1.1973)  loss_giou: 1.2710 (1.2696)  loss_cons: 0.5306 (0.4695)  time: 0.5804  data: 0.1659  max mem: 4020
+Epoch: [96]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 3.0523 (3.0145)  loss_bbox: 1.1725 (1.2043)  loss_giou: 1.2849 (1.2825)  loss_cons: 0.5523 (0.5277)  time: 0.5400  data: 0.1248  max mem: 4020
+Epoch: [96] Total time: 0:00:08 (0.5525 s / it)
+Averaged stats: lr: 0.000001  loss: 3.0523 (3.0145)  loss_bbox: 1.1725 (1.2043)  loss_giou: 1.2849 (1.2825)  loss_cons: 0.5523 (0.5277)
+Epoch: [97]  [ 0/15]  eta: 0:00:32  lr: 0.000001  loss: 3.0289 (3.0289)  loss_bbox: 1.2336 (1.2336)  loss_giou: 1.2773 (1.2773)  loss_cons: 0.5180 (0.5180)  time: 2.1732  data: 1.7580  max mem: 4020
+Epoch: [97]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 2.9770 (2.9746)  loss_bbox: 1.2113 (1.1818)  loss_giou: 1.3094 (1.3037)  loss_cons: 0.5180 (0.4891)  time: 0.5979  data: 0.1842  max mem: 4020
+Epoch: [97]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.9770 (2.9823)  loss_bbox: 1.1672 (1.1919)  loss_giou: 1.3094 (1.2996)  loss_cons: 0.5180 (0.4908)  time: 0.5519  data: 0.1372  max mem: 4020
+Epoch: [97] Total time: 0:00:08 (0.5642 s / it)
+Averaged stats: lr: 0.000001  loss: 2.9770 (2.9823)  loss_bbox: 1.1672 (1.1919)  loss_giou: 1.3094 (1.2996)  loss_cons: 0.5180 (0.4908)
+Epoch: [98]  [ 0/15]  eta: 0:00:36  lr: 0.000001  loss: 3.3317 (3.3317)  loss_bbox: 1.1959 (1.1959)  loss_giou: 1.3471 (1.3471)  loss_cons: 0.7886 (0.7886)  time: 2.4091  data: 1.9942  max mem: 4020
+Epoch: [98]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 3.1246 (3.1396)  loss_bbox: 1.2430 (1.2446)  loss_giou: 1.3418 (1.3173)  loss_cons: 0.6079 (0.5777)  time: 0.5987  data: 0.1899  max mem: 4020
+Epoch: [98]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 3.1246 (3.1379)  loss_bbox: 1.2430 (1.2389)  loss_giou: 1.3418 (1.3198)  loss_cons: 0.6079 (0.5793)  time: 0.5518  data: 0.1414  max mem: 4020
+Epoch: [98] Total time: 0:00:08 (0.5631 s / it)
+Averaged stats: lr: 0.000001  loss: 3.1246 (3.1379)  loss_bbox: 1.2430 (1.2389)  loss_giou: 1.3418 (1.3198)  loss_cons: 0.6079 (0.5793)
+Epoch: [99]  [ 0/15]  eta: 0:00:31  lr: 0.000001  loss: 3.4885 (3.4885)  loss_bbox: 1.4118 (1.4118)  loss_giou: 1.3776 (1.3776)  loss_cons: 0.6991 (0.6991)  time: 2.1025  data: 1.6588  max mem: 4020
+Epoch: [99]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 2.9727 (3.0148)  loss_bbox: 1.1451 (1.1847)  loss_giou: 1.3012 (1.3047)  loss_cons: 0.5328 (0.5255)  time: 0.5873  data: 0.1732  max mem: 4020
+Epoch: [99]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.8725 (3.0140)  loss_bbox: 1.1451 (1.1931)  loss_giou: 1.2950 (1.2904)  loss_cons: 0.5328 (0.5305)  time: 0.5419  data: 0.1289  max mem: 4020
+Epoch: [99] Total time: 0:00:08 (0.5531 s / it)
+Averaged stats: lr: 0.000001  loss: 2.8725 (3.0140)  loss_bbox: 1.1451 (1.1931)  loss_giou: 1.2950 (1.2904)  loss_cons: 0.5328 (0.5305)
+Test:  [ 0/76]  eta: 0:02:33  loss: 2.8840 (2.8840)  loss_bbox: 1.5306 (1.5306)  loss_giou: 1.3533 (1.3533)  time: 2.0191  data: 1.8166  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.8496 (2.8430)  loss_bbox: 1.4501 (1.4681)  loss_giou: 1.3778 (1.3749)  time: 0.4158  data: 0.2419  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.7562 (2.8326)  loss_bbox: 1.4457 (1.4502)  loss_giou: 1.3875 (1.3824)  time: 0.2432  data: 0.0723  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.7510 (2.8108)  loss_bbox: 1.4125 (1.4328)  loss_giou: 1.3893 (1.3780)  time: 0.2104  data: 0.0386  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.8004 (2.8181)  loss_bbox: 1.4182 (1.4356)  loss_giou: 1.3886 (1.3825)  time: 0.2104  data: 0.0390  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.7739 (2.8009)  loss_bbox: 1.4182 (1.4230)  loss_giou: 1.3614 (1.3779)  time: 0.2250  data: 0.0562  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.7724 (2.8233)  loss_bbox: 1.4343 (1.4374)  loss_giou: 1.3812 (1.3859)  time: 0.1993  data: 0.0336  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8610 (2.8208)  loss_bbox: 1.4493 (1.4397)  loss_giou: 1.3938 (1.3811)  time: 0.1878  data: 0.0244  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.7775 (2.8180)  loss_bbox: 1.3819 (1.4341)  loss_giou: 1.3950 (1.3839)  time: 0.1847  data: 0.0270  max mem: 4020
+Test: Total time: 0:00:18 (0.2370 s / it)
+Averaged stats: loss: 2.7775 (2.8180)  loss_bbox: 1.3819 (1.4341)  loss_giou: 1.3950 (1.3839)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.034
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.007
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.025
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.045
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.045
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.045
+Epoch: [100]  [ 0/15]  eta: 0:00:29  lr: 0.000001  loss: 2.9844 (2.9844)  loss_bbox: 1.1537 (1.1537)  loss_giou: 1.2217 (1.2217)  loss_cons: 0.6089 (0.6089)  time: 1.9758  data: 1.5554  max mem: 4020
+Epoch: [100]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 2.9526 (3.0148)  loss_bbox: 1.1846 (1.2741)  loss_giou: 1.2925 (1.2762)  loss_cons: 0.4485 (0.4646)  time: 0.5803  data: 0.1654  max mem: 4020
+Epoch: [100]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.9526 (2.9993)  loss_bbox: 1.1846 (1.2446)  loss_giou: 1.2925 (1.2856)  loss_cons: 0.4485 (0.4692)  time: 0.5370  data: 0.1234  max mem: 4020
+Epoch: [100] Total time: 0:00:08 (0.5481 s / it)
+Averaged stats: lr: 0.000001  loss: 2.9526 (2.9993)  loss_bbox: 1.1846 (1.2446)  loss_giou: 1.2925 (1.2856)  loss_cons: 0.4485 (0.4692)
+Epoch: [101]  [ 0/15]  eta: 0:00:30  lr: 0.000001  loss: 2.8567 (2.8567)  loss_bbox: 1.1484 (1.1484)  loss_giou: 1.3339 (1.3339)  loss_cons: 0.3743 (0.3743)  time: 2.0623  data: 1.6472  max mem: 4020
+Epoch: [101]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 2.7892 (2.9658)  loss_bbox: 1.1484 (1.2142)  loss_giou: 1.2825 (1.2975)  loss_cons: 0.3736 (0.4541)  time: 0.5764  data: 0.1694  max mem: 4020
+Epoch: [101]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.8567 (3.0347)  loss_bbox: 1.1811 (1.2218)  loss_giou: 1.3226 (1.3062)  loss_cons: 0.4670 (0.5068)  time: 0.5331  data: 0.1263  max mem: 4020
+Epoch: [101] Total time: 0:00:08 (0.5452 s / it)
+Averaged stats: lr: 0.000001  loss: 2.8567 (3.0347)  loss_bbox: 1.1811 (1.2218)  loss_giou: 1.3226 (1.3062)  loss_cons: 0.4670 (0.5068)
+Epoch: [102]  [ 0/15]  eta: 0:00:30  lr: 0.000001  loss: 2.6159 (2.6159)  loss_bbox: 1.0011 (1.0011)  loss_giou: 1.1829 (1.1829)  loss_cons: 0.4319 (0.4319)  time: 2.0347  data: 1.6161  max mem: 4020
+Epoch: [102]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 3.0136 (2.9637)  loss_bbox: 1.1541 (1.1825)  loss_giou: 1.2907 (1.2799)  loss_cons: 0.5417 (0.5013)  time: 0.5819  data: 0.1716  max mem: 4020
+Epoch: [102]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.8672 (2.9214)  loss_bbox: 1.1541 (1.1726)  loss_giou: 1.2736 (1.2682)  loss_cons: 0.5008 (0.4805)  time: 0.5384  data: 0.1279  max mem: 4020
+Epoch: [102] Total time: 0:00:08 (0.5496 s / it)
+Averaged stats: lr: 0.000001  loss: 2.8672 (2.9214)  loss_bbox: 1.1541 (1.1726)  loss_giou: 1.2736 (1.2682)  loss_cons: 0.5008 (0.4805)
+Epoch: [103]  [ 0/15]  eta: 0:00:32  lr: 0.000001  loss: 2.8119 (2.8119)  loss_bbox: 1.0567 (1.0567)  loss_giou: 1.2477 (1.2477)  loss_cons: 0.5075 (0.5075)  time: 2.1379  data: 1.6850  max mem: 4020
+Epoch: [103]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 2.9144 (3.0654)  loss_bbox: 1.1261 (1.2328)  loss_giou: 1.2899 (1.2844)  loss_cons: 0.4726 (0.5482)  time: 0.5971  data: 0.1767  max mem: 4020
+Epoch: [103]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.8766 (2.9841)  loss_bbox: 1.1261 (1.2043)  loss_giou: 1.2858 (1.2696)  loss_cons: 0.4726 (0.5101)  time: 0.5540  data: 0.1344  max mem: 4020
+Epoch: [103] Total time: 0:00:08 (0.5651 s / it)
+Averaged stats: lr: 0.000001  loss: 2.8766 (2.9841)  loss_bbox: 1.1261 (1.2043)  loss_giou: 1.2858 (1.2696)  loss_cons: 0.4726 (0.5101)
+Epoch: [104]  [ 0/15]  eta: 0:00:31  lr: 0.000001  loss: 2.9725 (2.9725)  loss_bbox: 1.2021 (1.2021)  loss_giou: 1.3128 (1.3128)  loss_cons: 0.4576 (0.4576)  time: 2.0670  data: 1.6403  max mem: 4020
+Epoch: [104]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 2.9725 (2.9857)  loss_bbox: 1.1655 (1.1892)  loss_giou: 1.2888 (1.2982)  loss_cons: 0.4287 (0.4983)  time: 0.5886  data: 0.1746  max mem: 4020
+Epoch: [104]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.9725 (2.9893)  loss_bbox: 1.1879 (1.1930)  loss_giou: 1.2859 (1.2922)  loss_cons: 0.4576 (0.5041)  time: 0.5429  data: 0.1300  max mem: 4020
+Epoch: [104] Total time: 0:00:08 (0.5535 s / it)
+Averaged stats: lr: 0.000001  loss: 2.9725 (2.9893)  loss_bbox: 1.1879 (1.1930)  loss_giou: 1.2859 (1.2922)  loss_cons: 0.4576 (0.5041)
+Test:  [ 0/76]  eta: 0:03:22  loss: 2.8806 (2.8806)  loss_bbox: 1.5283 (1.5283)  loss_giou: 1.3523 (1.3523)  time: 2.6655  data: 2.4716  max mem: 4020
+Test:  [10/76]  eta: 0:00:27  loss: 2.8529 (2.8449)  loss_bbox: 1.4553 (1.4697)  loss_giou: 1.3818 (1.3752)  time: 0.4184  data: 0.2431  max mem: 4020
+Test:  [20/76]  eta: 0:00:18  loss: 2.7656 (2.8343)  loss_bbox: 1.4525 (1.4512)  loss_giou: 1.3869 (1.3830)  time: 0.2072  data: 0.0367  max mem: 4020
+Test:  [30/76]  eta: 0:00:12  loss: 2.7501 (2.8116)  loss_bbox: 1.4091 (1.4332)  loss_giou: 1.3881 (1.3784)  time: 0.2012  data: 0.0324  max mem: 4020
+Test:  [40/76]  eta: 0:00:09  loss: 2.7995 (2.8183)  loss_bbox: 1.4125 (1.4356)  loss_giou: 1.3881 (1.3827)  time: 0.2014  data: 0.0336  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.7678 (2.8006)  loss_bbox: 1.4125 (1.4226)  loss_giou: 1.3627 (1.3780)  time: 0.2243  data: 0.0560  max mem: 4020
+Test:  [60/76]  eta: 0:00:03  loss: 2.7724 (2.8230)  loss_bbox: 1.4283 (1.4369)  loss_giou: 1.3804 (1.3861)  time: 0.2012  data: 0.0333  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8533 (2.8204)  loss_bbox: 1.4465 (1.4390)  loss_giou: 1.3955 (1.3814)  time: 0.1863  data: 0.0221  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.7724 (2.8175)  loss_bbox: 1.3845 (1.4334)  loss_giou: 1.3963 (1.3841)  time: 0.1823  data: 0.0236  max mem: 4020
+Test: Total time: 0:00:17 (0.2339 s / it)
+Averaged stats: loss: 2.7724 (2.8175)  loss_bbox: 1.3845 (1.4334)  loss_giou: 1.3963 (1.3841)
+Accumulating evaluation results...
+DONE (t=0.10s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.034
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.007
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.025
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.045
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.045
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.045
+Epoch: [105]  [ 0/15]  eta: 0:00:33  lr: 0.000001  loss: 2.7553 (2.7553)  loss_bbox: 1.0968 (1.0968)  loss_giou: 1.3309 (1.3309)  loss_cons: 0.3275 (0.3275)  time: 2.2407  data: 1.8272  max mem: 4020
+Epoch: [105]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 2.9004 (3.0173)  loss_bbox: 1.1891 (1.2070)  loss_giou: 1.2969 (1.2986)  loss_cons: 0.4751 (0.5117)  time: 0.5944  data: 0.1834  max mem: 4020
+Epoch: [105]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.9004 (3.0330)  loss_bbox: 1.1776 (1.1992)  loss_giou: 1.2969 (1.2928)  loss_cons: 0.4813 (0.5409)  time: 0.5474  data: 0.1366  max mem: 4020
+Epoch: [105] Total time: 0:00:08 (0.5594 s / it)
+Averaged stats: lr: 0.000001  loss: 2.9004 (3.0330)  loss_bbox: 1.1776 (1.1992)  loss_giou: 1.2969 (1.2928)  loss_cons: 0.4813 (0.5409)
+Epoch: [106]  [ 0/15]  eta: 0:00:31  lr: 0.000001  loss: 2.6756 (2.6756)  loss_bbox: 1.0534 (1.0534)  loss_giou: 1.2605 (1.2605)  loss_cons: 0.3616 (0.3616)  time: 2.1061  data: 1.6888  max mem: 4020
+Epoch: [106]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 3.1182 (3.1276)  loss_bbox: 1.2406 (1.2897)  loss_giou: 1.3068 (1.3152)  loss_cons: 0.5010 (0.5226)  time: 0.5735  data: 0.1663  max mem: 4020
+Epoch: [106]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 3.1163 (3.0924)  loss_bbox: 1.2368 (1.2718)  loss_giou: 1.3096 (1.3079)  loss_cons: 0.5010 (0.5128)  time: 0.5329  data: 0.1240  max mem: 4020
+Epoch: [106] Total time: 0:00:08 (0.5444 s / it)
+Averaged stats: lr: 0.000001  loss: 3.1163 (3.0924)  loss_bbox: 1.2368 (1.2718)  loss_giou: 1.3096 (1.3079)  loss_cons: 0.5010 (0.5128)
+Epoch: [107]  [ 0/15]  eta: 0:00:35  lr: 0.000001  loss: 3.1057 (3.1057)  loss_bbox: 1.2960 (1.2960)  loss_giou: 1.3680 (1.3680)  loss_cons: 0.4417 (0.4417)  time: 2.3991  data: 1.9836  max mem: 4020
+Epoch: [107]  [10/15]  eta: 0:00:03  lr: 0.000001  loss: 2.8890 (2.9160)  loss_bbox: 1.1489 (1.1897)  loss_giou: 1.2807 (1.2859)  loss_cons: 0.4417 (0.4404)  time: 0.6314  data: 0.1991  max mem: 4020
+Epoch: [107]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.8890 (2.9415)  loss_bbox: 1.1489 (1.1885)  loss_giou: 1.2780 (1.2893)  loss_cons: 0.4542 (0.4637)  time: 0.5755  data: 0.1479  max mem: 4020
+Epoch: [107] Total time: 0:00:08 (0.5864 s / it)
+Averaged stats: lr: 0.000001  loss: 2.8890 (2.9415)  loss_bbox: 1.1489 (1.1885)  loss_giou: 1.2780 (1.2893)  loss_cons: 0.4542 (0.4637)
+Epoch: [108]  [ 0/15]  eta: 0:00:32  lr: 0.000001  loss: 3.2029 (3.2029)  loss_bbox: 1.3972 (1.3972)  loss_giou: 1.2898 (1.2898)  loss_cons: 0.5159 (0.5159)  time: 2.1560  data: 1.7432  max mem: 4020
+Epoch: [108]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 3.0675 (3.0345)  loss_bbox: 1.2250 (1.2293)  loss_giou: 1.2931 (1.3014)  loss_cons: 0.5159 (0.5037)  time: 0.5872  data: 0.1712  max mem: 4020
+Epoch: [108]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 3.0023 (2.9911)  loss_bbox: 1.2250 (1.2091)  loss_giou: 1.2898 (1.2979)  loss_cons: 0.5036 (0.4841)  time: 0.5458  data: 0.1297  max mem: 4020
+Epoch: [108] Total time: 0:00:08 (0.5576 s / it)
+Averaged stats: lr: 0.000001  loss: 3.0023 (2.9911)  loss_bbox: 1.2250 (1.2091)  loss_giou: 1.2898 (1.2979)  loss_cons: 0.5036 (0.4841)
+Epoch: [109]  [ 0/15]  eta: 0:00:28  lr: 0.000001  loss: 2.8871 (2.8871)  loss_bbox: 1.2015 (1.2015)  loss_giou: 1.2615 (1.2615)  loss_cons: 0.4241 (0.4241)  time: 1.8747  data: 1.4565  max mem: 4020
+Epoch: [109]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 2.8871 (2.9319)  loss_bbox: 1.2015 (1.2163)  loss_giou: 1.2816 (1.2873)  loss_cons: 0.4523 (0.4283)  time: 0.5659  data: 0.1560  max mem: 4020
+Epoch: [109]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 2.8871 (2.9617)  loss_bbox: 1.2015 (1.2195)  loss_giou: 1.2816 (1.2825)  loss_cons: 0.4523 (0.4597)  time: 0.5359  data: 0.1199  max mem: 4020
+Epoch: [109] Total time: 0:00:08 (0.5475 s / it)
+Averaged stats: lr: 0.000001  loss: 2.8871 (2.9617)  loss_bbox: 1.2015 (1.2195)  loss_giou: 1.2816 (1.2825)  loss_cons: 0.4523 (0.4597)
+Test:  [ 0/76]  eta: 0:03:20  loss: 2.8709 (2.8709)  loss_bbox: 1.5209 (1.5209)  loss_giou: 1.3500 (1.3500)  time: 2.6321  data: 2.3936  max mem: 4020
+Test:  [10/76]  eta: 0:00:29  loss: 2.8430 (2.8433)  loss_bbox: 1.4557 (1.4687)  loss_giou: 1.3819 (1.3746)  time: 0.4526  data: 0.2744  max mem: 4020
+Test:  [20/76]  eta: 0:00:19  loss: 2.7655 (2.8328)  loss_bbox: 1.4459 (1.4509)  loss_giou: 1.3852 (1.3819)  time: 0.2309  data: 0.0609  max mem: 4020
+Test:  [30/76]  eta: 0:00:13  loss: 2.7418 (2.8092)  loss_bbox: 1.4206 (1.4325)  loss_giou: 1.3847 (1.3767)  time: 0.2077  data: 0.0359  max mem: 4020
+Test:  [40/76]  eta: 0:00:10  loss: 2.8008 (2.8158)  loss_bbox: 1.4127 (1.4348)  loss_giou: 1.3847 (1.3810)  time: 0.2071  data: 0.0342  max mem: 4020
+Test:  [50/76]  eta: 0:00:06  loss: 2.7651 (2.7980)  loss_bbox: 1.4127 (1.4218)  loss_giou: 1.3608 (1.3762)  time: 0.2197  data: 0.0500  max mem: 4020
+Test:  [60/76]  eta: 0:00:04  loss: 2.7602 (2.8207)  loss_bbox: 1.4261 (1.4364)  loss_giou: 1.3789 (1.3843)  time: 0.1977  data: 0.0304  max mem: 4020
+Test:  [70/76]  eta: 0:00:01  loss: 2.8540 (2.8190)  loss_bbox: 1.4441 (1.4391)  loss_giou: 1.3909 (1.3799)  time: 0.1917  data: 0.0266  max mem: 4020
+Test:  [75/76]  eta: 0:00:00  loss: 2.7666 (2.8160)  loss_bbox: 1.3899 (1.4335)  loss_giou: 1.3909 (1.3825)  time: 0.1814  data: 0.0220  max mem: 4020
+Test: Total time: 0:00:18 (0.2406 s / it)
+Averaged stats: loss: 2.7666 (2.8160)  loss_bbox: 1.3899 (1.4335)  loss_giou: 1.3909 (1.3825)
+Accumulating evaluation results...
+DONE (t=0.09s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.006
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.034
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.006
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.025
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.045
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.045
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.045
+Epoch: [110]  [ 0/15]  eta: 0:00:25  lr: 0.000001  loss: 3.0677 (3.0677)  loss_bbox: 1.1306 (1.1306)  loss_giou: 1.3563 (1.3563)  loss_cons: 0.5808 (0.5808)  time: 1.7103  data: 1.2929  max mem: 4020
+Epoch: [110]  [10/15]  eta: 0:00:02  lr: 0.000001  loss: 3.0694 (3.0744)  loss_bbox: 1.2173 (1.2510)  loss_giou: 1.3357 (1.3230)  loss_cons: 0.4289 (0.5004)  time: 0.5493  data: 0.1426  max mem: 4020
+Epoch: [110]  [14/15]  eta: 0:00:00  lr: 0.000001  loss: 3.0694 (3.0622)  loss_bbox: 1.2601 (1.2549)  loss_giou: 1.3022 (1.3198)  loss_cons: 0.4289 (0.4874)  time: 0.5121  data: 0.1066  max mem: 4020
+Epoch: [110] Total time: 0:00:07 (0.5230 s / it)
+Averaged stats: lr: 0.000001  loss: 3.0694 (3.0622)  loss_bbox: 1.2601 (1.2549)  loss_giou: 1.3022 (1.3198)  loss_cons: 0.4289 (0.4874)
+Training time 0:23:42
