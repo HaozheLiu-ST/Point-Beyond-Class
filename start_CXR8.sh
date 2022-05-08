@@ -1,6 +1,6 @@
 #!/bin/sh
 ## -------------------------------------------------------------------------------------------------------
-##                                                    CXR 8(后7类合并为一类)
+##                                                    CXR 8(7 classes with limited data are regarded as a single class)
 ## -------------------------------------------------------------------------------------------------------
 # | exp 1 | pointDETR baseline | data=5p/10p/20p/30p/40p | train: instances_trainBox.json, test: instances_val.json |
 # partial=10
@@ -57,7 +57,7 @@
 #     --output_dir ./outfiles/models/CXR8/exp3_stage1_data$[partial]p_1pts_Erase0_jit005_unlabelLossL2Loss50_2-3box >  \
 #                  ./outfiles/logs/CXR8/exp3_stage1_data$[partial]p_1pts_Erase0_jit005_unlabelLossL2Loss50_2-3box.log 2>&1
 
-# # exp 4  data=5p/10p/20p/30p/40p unlabel_cons   有/无（跟exp9_一样） 加载box两个点+cons loss训练的权重
+# # exp 4  data=5p/10p/20p/30p/40p unlabel_cons   with/without（similar with exp9_） sample two points from boxes + cons loss guided weight.
 # partial=10
 # OMP_NUM_THREADS=8 python3.6 main.py \
 #     --epochs 111 \
