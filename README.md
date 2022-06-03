@@ -1,6 +1,6 @@
 # Point-Beyond-Class
 
-> The official Pytorch Implementation for the paper, 'Point Beyond Class: A Benchmark for Weakly Semi-Supervised Abnormality Localization in Chest X-Rays' (under reviewed by MICCAI'2022)
+> The official Pytorch Implementation for the paper, 'Point Beyond Class: A Benchmark for Weakly Semi-Supervised Abnormality Localization in Chest X-Rays' (Accepted by MICCAI'2022)
 
 
 
