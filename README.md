@@ -209,6 +209,28 @@
 * Pre-trained models
 Pre-trained models can be found [here](https://drive.google.com/drive/folders/1TzGoaFDs36OQ9W5xLLeQZJ1s_oFaiihV?usp=sharing)
 
+## Citation
+If you find this work is useful for you, please cite this work. 
+
+```
+@inproceedings{ji2022point,
+  title={Point Beyond Class: A Benchmark for Weakly Semi-supervised Abnormality Localization in Chest X-Rays},
+  author={Ji, Haoqin and Liu, Haozhe and Li, Yuexiang and Xie, Jinheng and He, Nanjun and Huang, Yawen and Wei, Dong and Chen, Xinrong and Shen, Linlin and Zheng, Yefeng},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={249--260},
+  year={2022},
+  organization={Springer}
+}
+
+@article{ji2022benchmark,
+  title={A Benchmark for Weakly Semi-Supervised Abnormality Localization in Chest X-Rays},
+  author={Ji, Haoqin and Liu, Haozhe and Li, Yuexiang and Xie, Jinheng and He, Nanjun and Huang, Yawen and Wei, Dong and Chen, Xinrong and Shen, Linlin and Zheng, Yefeng},
+  journal={arXiv preprint arXiv:2209.01988},
+  year={2022}
+}
+```
+
+
 ## Acknowledgment
 This repo borrows some code from [UP-DETR](https://github.com/dddzg/up-detr) and [point DETR](https://arxiv.org/abs/2104.07434).
 
